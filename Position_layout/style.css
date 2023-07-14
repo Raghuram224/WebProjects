@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+section{
+    color: white;
+    width: 500px;
+    margin: auto;
+}
+section >h1{
+    margin:auto;
+    font-size: 40px;
+    width: 500px;
+    font-family: monospace;
+    position: relative;
+    left: 50px;
+
+}
+span{
+    color:#f2c318;
+}
+.Festivel{
+    border: Festivel5px solid white;
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    margin: 30px;
+    color: white;
+    background-size: cover;
+    background-position: left;
+    text-align: justify;
+    position: relative;
+    z-index: 99;
+
+}
+.Festivel >h1{
+    font-size: 30px;
+}
+.content{
+    background-image: url('blossom.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 180px;
+    border-radius:50% ;
+    position: absolute;
+    right: -80px;
+    top:-80px;
+    transition: 1s;
+}
+.Festivel:hover .content{
+    /* background-image: url('blossom.jpg'); */
+    /* background-size: cover;
+    background-position: center; */
+    width: 100%;
+    height:100%;
+    border-radius:0% ;
+    /* position: absolute; */
+    right: 0px;
+    top:0px;
+    transition: 1s;
+
+}
+.cherry{
+    
+    background-color: #fc03df;
+    position: relative;  
+    overflow: hidden;    
+    
+   
+}
+.holy{
+    background-color: #0a2b4a;
+   
+    background-image: url('holy.jpg');
+}
+
+.lantern{
+    background-color: #f2c318;
+    background-image: url('lantern.jpeg');
+    
+}
+.holy >h1{
+   
+    left:300px;
+    
+}
