@@ -1,11 +1,96 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing:border-box;
 
+}
+body{
+    background-color: black;
 }
 .home{
     background-image:url('mars.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
+    color: white;
+}
+.nav >ul{
+    text-align: right;   
+    padding: top -5px;;
+    padding: 15px;
+    font-size: 30px;
+    
+}
+.nav>a{
+    padding: 50px;
+}
+.overview{
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+.overview >h1{
+    padding-top: 50px;
+}
+.overview>p{
+    padding: 20px;
+    text-align: justify;
+    width: 500px;
+    margin: auto;
+    font-size: 30px;
+    color: white;
+}
+img{
+    width: 800px;
+    height: 350px;
+    object-fit: cover;
+    padding-left: 200px ;
+    border-radius:10px;
+}
+.image{
+   border: 5px solid white;
+   
+}
+.one{
+    
+}
+
+.split1{
+    border: 5px solid white;
+    position: relative;
+    padding: 40px;
+}
+.text1{
+    position: absolute;
+    left:900px;
+    top:100px;
+    text-align: justify;
+    margin: auto;
+    color: white;
+}
+
+.split2{
+    border: 5px solid white;
+    position: relative;
+    
+}
+.text2{
+    color:white;
+    position: absolute;
+    top: 200px;
+    margin: auto;
+    left: 200px;
+    
+}
+.two{
+    position: absolute;
+    left:900px;
+    top:100px;
+    text-align: justify;
+    margin: auto;
+    color: white;
+     
+}
+.footer{
+    padding: 40px;
 }
