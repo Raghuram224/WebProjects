@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.first_div{
+    width: 30%;
+    height: 30%;
+    border: 5px solid black;
+    display: inline-block;
+    margin-left: 230px; 
+    margin-top:50px ;
+    
+}
+.second_div{
+
+    width: 30%;
+    height: 30%;
+    border: 5px solid black;
+    display: inline-block;
+    margin-left: 230px; 
+    margin-top:50px ;
+    
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
