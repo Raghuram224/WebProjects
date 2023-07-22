@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.box{
+    width:500px;
+    height:250px;
+    border:1px solid black;
+    margin:250px auto;
+    background-image:url("https://live-production.wcms.abc-cdn.net.au/b99dc828ccb039361e359ce7469122f6?impolicy=wcms_crop_resize&cropH=560&cropW=995&xPos=5&yPos=137&width=862&height=485");
+    background-position:center;
+    background-size:cover;
+
+}
+.content{
+    background-color:rgba(0,0,0,0.4);
+    clip-path: circle(0% at 100% );
+    width:100%;
+    height:100%;
+    transition-duration:0.7s;
+   
+}
+.content >p{
+    text-align: center;
+    padding: 10px;
+}
+.box:hover .content{
+    clip-path:circle(200% at 100%);
+}
