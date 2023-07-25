@@ -14,7 +14,10 @@ html,body{
     display: inline-block;
     margin-left: 230px; 
     margin-top:50px ;
-    
+    position: relative;
+    perspective:800px;
+    overflow: hidden;    
+    background-color: black;
 }
 .second_div{
 
@@ -24,10 +27,120 @@ html,body{
     display: inline-block;
     margin-left: 230px; 
     margin-top:50px ;
+    position: relative;
+    background-color: black;
     
 }
 img{
+    
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 2s;
+}
+.one:hover >img{
+    transform: rotateX(130deg);   
+}
+.one>img{
+    transform-origin:bottom;
+    transition: 1s;
+   
+}
+.texts{
+    width: 100%;
+    position: absolute;
+    transition: 2s;
+    transform-origin: top;
+    transform: rotateX(90deg); 
+    transform-origin: top;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:black;
+}
+.content{
+    position: absolute;
+    border: 30px solid white;
+    /* top: 30%; */
+    /* width: 100% ; */
+    left: 5%;
+    bottom: 5%;
+    right:5%;
+    top:5%;
+    background-color:rgb(0,0,0);
+    color:white;
+}
+.one:hover .texts{
+    transform: rotateX(0deg);
+}
+.content>h1{
+    margin-bottom: 30px ;
+}
+.content>p{
+    margin-bottom: 30px ;
+}
+.two:hover >img{
+    transform: rotateY(130deg); 
+    transform-origin:left;  
+    transition: 2s;
+    
+}
+.two:hover .slide2{
+    transform-origin: right;
+    transform: rotateX(0deg);
+}
+.slide2{
+    width: 100%;
+    position: absolute;
+    transition: 1s;    
+    transform: rotateY(90deg); 
+    transform-origin: right;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:black;
+    
+}
+.slide3{
+  transform: scale(0);
+  transform-origin: right;  
+  right: 0;
+  position: absolute;
+  transition: 1s;
+}
+
+.three :hover {
+    transform: rotateY(90deg);
+    transform: scale(0);
+    transform-origin: left;
+    transition: 1s;
+}
+.three:hover .slide3{
+    transform: scale(1);
+    transform-origin: right;
+    transition: 1s;
+
+}
+
+.four:hover >img{
+    transform: rotateY(80deg);
+    transform-origin: left;
+    transition: 1s;
+
+}
+.slide4{
+    transform: rotateY(90deg);
+    transform-origin:right ;
+    position: absolute;
+    right: 0;
+    transition: 1s;
+}
+
+.four:hover .slide4{
+    transform:rotateY(0deg) ;
+    transform-origin: right;
+    transition: 1s;
+
 }
