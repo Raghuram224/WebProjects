@@ -125,7 +125,7 @@ img{
 }
 
 .four:hover >img{
-    transform: rotateY(80deg);
+    transform: rotateY(90deg);
     transform-origin: left;
     transition: 1s;
 
