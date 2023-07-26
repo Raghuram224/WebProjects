@@ -1,0 +1,115 @@
+html,body{
+    padding: 0;
+    margin: 0;
+  
+    color: white;
+    box-sizing: border-box;
+
+    /*   */
+}
+.img1{
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid black;
+    vertical-align: top;
+    position: relative;
+    
+    
+}
+.img2{
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+    vertical-align: top;
+    position: relative;
+    margin-left: -5px;
+    
+}
+.img1> img{
+    width: 100%;
+    height: 100%;
+    
+   
+}
+.main >.img1, .img2{
+    display: inline-block;
+    background-color: black;
+    
+    
+    
+}
+.main{
+    width: 100%;
+    height: 100%;
+    margin: 350px  auto;
+    text-align: center;
+    vertical-align: top;
+    overflow: hidden;
+    
+
+    
+}
+.img2> img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.img1 >.lt-txt{
+    width: 100%;
+    height: 100%;
+    color: white;
+    position: absolute;
+    bottom: 100%;
+    text-align: center;    
+    border: 3px solid black;
+    background-color: black;
+    transition: 1s;
+
+}
+.rt-txt{
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+   
+}
+
+.main:hover .lt-txt{
+    transform: translateY(100%);
+    transition: 1s;
+
+}
+.main:hover .Lawliet{
+    transform: translateY(-100%);
+    transition: 1s;
+}
+.Lawliet{
+    transition: 1s;
+}
+.Light{
+    transition: 1s;
+}
+.main:hover .Light{
+    transform: translateY(100%);
+    transition: 1s;
+}
+.rt-txt{
+    transition: 1s;
+
+}
+.main:hover .rt-txt{
+    transform: translateY(-100%);
+    transition: 1s;
+}
+.marg1{
+    width: 80%;
+    height: 80%;
+    border: 5px solid white;
+    margin: 25px auto;
+    
+}
