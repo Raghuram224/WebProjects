@@ -11,14 +11,14 @@ html,body{
    
 }
 .img1{
-    object-fit: cover;
+    background-image: url('https://images4.alphacoders.com/132/1323467.png ');
     width: 100%;
     height: 100%;
-  
+    background-size: cover;
     
 }
 .img2{
-    /* object-fit: cover; */
+   
     width: 100%;
     height: 100%;
     filter: grayscale(1);
@@ -28,15 +28,15 @@ html,body{
     bottom: 0;
     top: 0;
     transition: 1s;
-    border-left:3px solid white ;
-    /* transform-origin: right; */
+    border-right:2px solid white;
+    background-image: url('https://images4.alphacoders.com/132/1323467.png ');
+    background-size: cover;
+  
   
     
 }
-.main:hover .img2{
-    /* transform: rotateY(90deg); */
+.main:hover .img2{ 
     width: 0%;
     transition: 1s;
-    /* margin-right: 0; */
-    border-right:3px solid white ;
+    
 }
