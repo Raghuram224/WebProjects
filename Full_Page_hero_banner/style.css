@@ -26,6 +26,7 @@
     font-size: 100px;
     transition: 1s;
     color: #D1D1D1;
+    text-shadow: 3px 0 #fff;
     
    
 }
@@ -34,11 +35,12 @@
     font-size: 20px;
     color: B8B8B8;
     font-weight: 600;
-    color: rgba(215,32,0,0.6);
+    color: rgb(215,32,0);
     transition: 1s;
+    
 }
 .content:hover h1{
-    color: rgba(215,32,0,0.6);
+    color: rgb(215,32,0);
     transform: scale(1.5);
     transition: 1s;
     
@@ -46,4 +48,5 @@
 .content:hover >p{
     color: #D1D1D1;
     transition: 1s;
+    padding-top:  80px; ;
 }
