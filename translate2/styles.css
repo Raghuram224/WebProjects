@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding: 0;
+    
+}
+.wrapper{
+    width: 500px;
+    height: 500px;
+    margin:  300px auto;  
+    position: relative; 
+
+
+}
+.img1{
+    background-image: url("https://images8.alphacoders.com/630/630673.jpg" );
+       z-index: 1;
+
+}
+
+.img2{
+    background-image: url("https://images3.alphacoders.com/698/698424.jpg");
+    z-index: 2;
+    transform: rotate(10deg);
+    transition: 0.5s ease-in-out;
+    transition-delay:1s ;
+
+}
+
+.img3{
+    background-image: url("https://images8.alphacoders.com/113/1133132.jpg");
+    z-index: 3;
+    transform: rotate(-10deg);
+    transition: 0.5s ease-in-out;
+    transition-delay:1.5s ;
+}
+.img{
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+   position: absolute;
+}
+
+.wrapper:hover .img2{
+    transform: rotate(0deg);
+    transform: translate(-400px);
+    transition-delay:1.5s ;
+}
+.wrapper:hover .img3{
+    transform: rotate(0deg);
+    transform: translate(400px);
+
+    transition-delay:1s ;
+}

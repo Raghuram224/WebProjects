@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.nav_only{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+    color: white;
+}
+.nav_bar{
+    width: 80%;
+
+ 
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;;
+}
+li{
+    padding:8px 16px;
+}
+.stated{
+    /* flex-grow: 1; */
+  
+    font-size: 30px;
+
+}
+.Home{
+    margin-left: auto;
+    
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content h1{
+ 
+}
+
