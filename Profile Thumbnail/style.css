@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    width: 50%;
+    margin: 100px auto;
+}
+.box{
+    border: 3px solid black;
+    margin-top:5px;
+    width: 100%;
+    height:200px;
+}

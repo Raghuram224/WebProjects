@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    width: 100%;
+    height: 700px;
+    border: 3px solid black;
+    
+
+}
+
+/* img{
+    object-fit:cover    ;
+    width:400px ;
+    height:400px;
+    
+} */
+.layout1{
+    width: 400px;
+    height:400px ;
+    margin: 100px auto;
+    position: relative;
+    transition: 1s;
+    
+    
+
+}
+.inner1{
+    background-color: grey;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height:100%;
+    /* border: 3px solid black; */
+    transition: 1s;
+    border-radius: 15px;
+
+}
+.img1{
+    z-index: 3;
+    background-image: url('hemsworth.jpg');
+    background-position: center;
+    background-size: cover;
+    
+   
+}
+.content{
+    padding-top:10px ;
+    position: absolute;    
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 4;
+    background-color:white;
+    width: 100%;
+    height: 100px;
+  
+    
+}
+.one{
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.two{
+    z-index: 2;
+    
+}
+.three{
+    z-index: 1;
+}
+
+.layout1:hover .two{
+    transform: rotate(10deg);
+    transition: 1s;
+
+}
+.layout1:hover .three{
+    transform: rotate(15deg);    
+    transition: 1s;
+
+}
+
+.layout1:hover .content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 300px;
+    transition: 1s;
+
+}
+.layout1:hover .img1{
+    height: 80%;
+}

@@ -66,6 +66,7 @@ img{
 .layout1:hover{
     transform: scale(1.1);
     transition: 0.5s;
+   
 }
 .layout2:hover{
     transform: scale(1.1);
