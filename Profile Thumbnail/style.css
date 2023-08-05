@@ -2,14 +2,85 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
+
 .wrapper{
     width: 50%;
-    margin: 100px auto;
+    margin: 50px auto;
+    
 }
 .box{
     border: 3px solid black;
     margin-top:5px;
-    width: 100%;
-    height:200px;
+    width: 60%;
+    height:230px;
+}
+.img1{
+    background-image: url('tomc.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;   
+    background-repeat: no-repeat;
+    margin: 10px 10px;
+    
+}
+.img2{
+    background-image: url('RDJ.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;   
+    background-repeat: no-repeat;
+    margin: 10px 10px;
+    
+}
+.img3{
+    background-image: url('hems.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;   
+    background-repeat: no-repeat;
+    margin: 10px 10px;
+    
+}
+.img4{
+    background-image: url('keanu.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;   
+    background-repeat: no-repeat;
+    margin: 10px 10px;
+    
+}
+.layout1{
+    display: flex;
+}
+.layout2{
+    display: flex;
+}
+.layout3{
+    display: flex;
+}
+.layout{
+    display: flex;
+}
+.content{
+    font-size: 25px;
+    margin: 40px 40px;
+   
+   
+}
+.content >h1{
+    font-weight: 40px;
+}
+.content >p{
+    font-weight: 70px;
 }
