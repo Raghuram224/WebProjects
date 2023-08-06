@@ -22,6 +22,7 @@
     width: 60%;
     height:230px;
     background-color:darkgray;
+    transition: 0.5s;
 }
 .img1{
     background-image: url('tomc.jpg');
@@ -32,8 +33,10 @@
     border-radius: 50%;   
     background-repeat: no-repeat;
     margin: 10px 10px;
+    margin-left: 30px;
     
 }
+
 .img2{
     background-image: url('RDJ.jpg');
     background-position: center;
@@ -43,6 +46,7 @@
     border-radius: 50%;   
     background-repeat: no-repeat;
     margin: 10px 10px;
+    margin-left: 30px;
     
 }
 .img3{
@@ -54,6 +58,7 @@
     border-radius: 50%;   
     background-repeat: no-repeat;
     margin: 10px 10px;
+    margin-left: 30px;
     
 }
 .img4{
@@ -65,20 +70,24 @@
     border-radius: 50%;   
     background-repeat: no-repeat;
     margin: 10px 10px;
+    margin-left: 30px;
     
 }
 .layout1{
     display: flex;
-    
+
 }
 .layout2{
     display: flex;
+  
 }
 .layout3{
     display: flex;
+   
 }
 .layout4{
     display: flex;
+    
 }
 .content{
     font-size: 25px;
@@ -92,4 +101,12 @@
 .content >p{
     color: rgba(0, 0, 0, 0.5);
     font-weight: 70px;
+}
+
+
+.brbtm{
+    margin-top: 30px;
+    margin-left:10px ;
+    height: 150px;
+    border: 1px solid whitesmoke;
 }
