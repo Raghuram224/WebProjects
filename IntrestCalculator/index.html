@@ -4,16 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intrest Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="wrapper">
-        <p class="txt">Principle Amount</p>
-        <input type="text" name="pamount" id="check1"/><a><img src="asstets/rupees.svg"></a>
-        <p class="txt">Amount Intrest Rate</p>
-        <input type="text" name="intrest" id="check2"/><a><img src="asstets/rupees.svg"></a>
+    <section class="wrapper">       
+        <div class="calc cmn">
+            <div class="subdiv">
+            <p class="txt">Principle Amount</p>            
+            <input type="number" name="pamount" id="check1" />
+            <img src="asstets/rupees.svg"/>
+            
+            </div>
+            <div class="subdiv">
+                <p class="txt">Amount Intrest Rate</p>
+                <input type="number"border-bottom-left-radius: 20px; name="intrest" id="check2"/>
+                <img src="asstets/percentage.svg">
+            </div>
+            <div class="subdiv">
+                <p class="txt">Calculation period</p>
+                <input type="number" name="yeaer" id="check3"/>
+                <select class="period">
+                    <option value="Year">Year</option>
+                    <option value="month">Quarters</option>
+                    <option value="month">Month</option>
+                    <option value="Week">Week</option>
+                    <option value="Week">Days</option>
+                
+                </select>
+            </div>
+            <br>            
+            <input type="button" id="btn" onclick="main()" value="Calculate"/>
+            <h3 id="output1">Principle Amount:<p id="inner1"></p></h3>
+            <h3 id="output2">Intrest Rate:<p id="inner2"></p></h3>
+            <h3 id="output3">Total:<p id="inner3"></p></h3>
+        </div>
 
+        <div class="content cmn">
+            <h3 class="font1">Simple Intrest</h3>
+            <h1 class="font2">Calculator</h1>
+        </div>
     </section>
+    
 
-    <script src="script.js"></script>
+    <div src="script.js"></script>
+    
 </body>
 </html>

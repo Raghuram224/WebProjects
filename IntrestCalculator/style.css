@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,100;1,9..40,200;1,9..40,400&display=swap');
+
+img{
+    height: 20px;
+    width: 40px;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+html,body{
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    overflow: hidden;
+    
+    
+}
+input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(111,126,244);
+   
+    
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.wrapper{
+    margin: 30px auto;    
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    min-width: 30%;
+    background-color: white;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 0.2em;
+    border-radius: 10px;
+    /* border: 3px solid black; */
+}
+.content{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top,rgb(11,126,244),white);
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+.content >*{
+    margin-bottom: 1em;
+    
+}
+.txt{   
+   
+    width: 65%;
+}
+.calc{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* justify-content: start; */
+    /* align-items: self-start;     */
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    justify-content: space-evenly;   
+    /* border: 3px solid black; */
+}
+.align{
+    display: flex;
+     flex-direction: row;
+}
+.calc>*{
+    margin-top: 0.5em;
+}
+.cmn{
+    margin: 1em auto;
+    /* border: 2px solid black; */
+}
+
+.font1{
+    font-size: 1.4em;
+    opacity: 0.6;
+}
+.font2{
+    font-size: 2em;
+    color: white;
+}
+#btn{
+    border: none;
+}
+.subdiv{
+    display:inline-block;
+    vertical-align:top;
+    width: 80%;
+}
