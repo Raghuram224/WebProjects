@@ -11,32 +11,35 @@
         <div class="calc cmn">
             <div class="subdiv">
             <p class="txt">Principle Amount</p>            
-            <input type="number" name="pamount" id="check1" />
-            <img src="asstets/rupees.svg"/>
+            <input type="number" name="pamount" id="check1" class="inb" />
+            <img src="assets/ruppes.svg"/>
             
             </div>
             <div class="subdiv">
                 <p class="txt">Amount Intrest Rate</p>
-                <input type="number"border-bottom-left-radius: 20px; name="intrest" id="check2"/>
-                <img src="asstets/percentage.svg">
+                <input type="number" name="intrest" id="check2" class="inb"/>
+                <img src="assets/percentage.svg">
             </div>
             <div class="subdiv">
                 <p class="txt">Calculation period</p>
-                <input type="number" name="yeaer" id="check3"/>
-                <select class="period">
-                    <option value="Year">Year</option>
-                    <option value="month">Quarters</option>
+                <input type="number" name="yeaer" id="check3" class="inb"/>
+                <select class="period" id="time">
+                    <option value="year">Year</option>
+                    <option value="quarters">Quarters</option>
                     <option value="month">Month</option>
-                    <option value="Week">Week</option>
-                    <option value="Week">Days</option>
+                    <option value="week">Week</option>
+                    <option value="days">Days</option>
                 
                 </select>
             </div>
-            <br>            
-            <input type="button" id="btn" onclick="main()" value="Calculate"/>
-            <h3 id="output1">Principle Amount:<p id="inner1"></p></h3>
-            <h3 id="output2">Intrest Rate:<p id="inner2"></p></h3>
-            <h3 id="output3">Total:<p id="inner3"></p></h3>
+            <br>  
+            <input type="button" id="btn" onclick="main()"value="Calculate"/>          
+            <div class="dashboard">
+                
+                <h3 id="output1" class="btxt">Principle Amount: <span id="inner1"></span></h3>
+                <h3 id="output2" class="btxt">Intrest Rate: <span id="inner2"></span></h3>
+                <h3 id="output3"class="btxt">Total: <span id="inner3"></span></h3>
+            </div>
         </div>
 
         <div class="content cmn">
@@ -46,7 +49,7 @@
     </section>
     
 
-    <div src="script.js"></script>
+    <script src="script.js"></script>
     
 </body>
 </html>
