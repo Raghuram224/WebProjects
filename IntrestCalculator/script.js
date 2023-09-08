@@ -40,14 +40,25 @@ function simpleInterest() {
 
 function main() {
     let principlAmount = document.getElementById("check1");
-    
+    let intrest = document.getElementById("check2");
+    let period = document.getElementById("check3");
+
+
     let output1 = document.getElementById("inner1");
     let output2 = document.getElementById("inner2");
     let output3 = document.getElementById("inner3");
 
-    let outcome = simpleInterest();
-
-    output1.textContent =principlAmount.value;
-    output2.textContent =outcome;
-    output3.textContent =parseFloat(principlAmount.value)+parseFloat(outcome);
+    if(principlAmount.value=="" ||intrest.value =="" ||period.value==""){
+        output1.style.color="red";
+        output1.textContent="Invalid input.";
+    }
+    else{
+        let outcome = simpleInterest();
+        output1.style.color="";
+        output1.textContent =principlAmount.value;
+        output2.textContent =outcome;
+        output3.textContent =parseFloat(principlAmount.value)+parseFloat(outcome);
+    }
+    
+    
 }
