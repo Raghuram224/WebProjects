@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intrest Calculator</title>
+    <title>Interest Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="wrapper">       
         <div class="calc cmn">
             <div class="subdiv">
-            <p class="txt">Principle Amount</p>            
+            <p class="txt">Principal Amount</p>            
             <input type="number" name="pamount" id="check1" class="inb" />
             <img src="assets/ruppes.svg"/>
             
             </div>
             <div class="subdiv">
-                <p class="txt">Amount Intrest Rate</p>
+                <p class="txt">Amount Interest Rate</p>
                 <input type="number" name="intrest" id="check2" class="inb"/>
                 <img src="assets/percentage.svg">
             </div>
             <div class="subdiv">
-                <p class="txt">Calculation period</p>
+                <p class="txt">Calculation Period</p>
                 <input type="number" name="yeaer" id="check3" class="inb"/>
                 <select class="period" id="time">
                     <option value="year">Year</option>
@@ -36,14 +36,14 @@
             <input type="button" id="btn" onclick="main()"value="Calculate" class="button"/>          
             <div class="dashboard">
                 
-                <h3 id="output1" class="btxt">Principle Amount: <span class="colortxt" id="inner1"></span></h3>
-                <h3 id="output2" class="btxt">Intrest Rate: <span class="colortxt" id="inner2"></span></h3>
+                <h3 id="output1" class="btxt">Principal Amount: <span class="colortxt" id="inner1"></span></h3>
+                <h3 id="output2" class="btxt">Interest Rate: <span class="colortxt" id="inner2"></span></h3>
                 <h3 id="output3"class="btxt">Total: <span class="colortxt" id="inner3"></span></h3>
             </div>
         </div>
 
         <div class="content cmn">
-            <h3 class="font1">Simple Intrest</h3>
+            <h3 class="font1">Simple Interest</h3>
             <h1 class="font2">Calculator</h1>
         </div>
     </section>
