@@ -55,9 +55,9 @@ function main() {
     else{
         let outcome = simpleInterest();
         output1.style.color="";
-        output1.textContent =principlAmount.value;
-        output2.textContent =outcome;
-        output3.textContent =parseFloat(principlAmount.value)+parseFloat(outcome);
+        output1.textContent =principlAmount.value +" Rs.";
+        output2.textContent =outcome+" Rs.";
+        output3.textContent =parseFloat(principlAmount.value)+parseFloat(outcome)+" Rs.";
     }
     
     
