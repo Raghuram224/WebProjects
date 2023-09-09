@@ -1,3 +1,7 @@
+const INFOWINDOW = document.getElementById("info");
+const BMIWINDOW = document.getElementById('bmi-box');
+let buttonCount = 0;
+
 let height=document.getElementById("height");
 let weight= document.getElementById("weight");
 let result=document.getElementById("res");
@@ -5,7 +9,7 @@ let span= document.getElementById("span");
 
 function comment(output){
     output=parseFloat(output);   
-    console.log(output)
+    console.log(output);
     
     if (output < 16) {
         span.textContent = "Severe Thinness";
@@ -38,3 +42,17 @@ function main(){
     }
     
 }
+
+function showInfo(){
+
+    if (buttonCount % 2 === 0){
+        INFOWINDOW.style.transform = 'translateX(-100%)';
+    }
+    else {
+        INFOWINDOW.style.transform = 'translateX(0%)';
+    }
+
+    buttonCount++;
+}
+
+
