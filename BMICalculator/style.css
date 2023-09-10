@@ -14,6 +14,7 @@ html,body{
     height: 100%;
 }
 body{
+    /* background-color: rgb(132,203,255); */
     background-image: url('assets/backgroundTheme.png');
     background-position: center;
     background-size: cover;
@@ -37,27 +38,28 @@ input{
     width: 100%;
 }
 .img{
-    margin: 0.4em 0.5em 0.5em 85%;
-    padding: 0.3em 0.3em 0 0;
-    text-align: end;
-  
-}
-.help{
+    width: 50px;
+    height: 50px;
+    margin: 0.5em 0.5em 0.5em 85%;
+    padding: 0.3em;
     text-align: center;
-    color:white;
+    color: white;
+    border-radius: 50%;
     background-color: rgb(78,125,248);
-    padding: 0.5em;
-    border-radius :40%; 
-    font-size: 1.3em;
+    font-size: 30px;
 }
+
 .wrapper{
+    margin: 1em auto;
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
+    justify-content: center; 
     width: 100%;
     vertical-align: top;
-    /* overflow: hidden; */
     position: relative;
+    max-width: 90%;
+    overflow: hidden;
+    min-width: 150px;
+    
 }
 
 .section1{
@@ -71,16 +73,16 @@ input{
     border-radius: 20px;
     /* border: 3px solid black; */
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0px 0px 100px -100px rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 100px -100px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(30px);
 }
 
 .main{
     border-radius: 20px; 
     /* border: 2px solid black; */
-    margin: 0 auto;
+    margin: 0.5em auto;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -117,6 +119,7 @@ input{
 .main >*{
     margin-top: 1em;
     width:80%;
+    transition: 300ms ease-in-out;
 }
 
 .brdr{
@@ -125,6 +128,8 @@ input{
     display: block;
     width: 80%;
     border-bottom: 2px solid rgb(78,125,248);
+    color: rgb(78,125,248);
+    font-weight: 900;
     /* margin-bottom: 0.4em; */
     /* margin-bottom: 10em; */
 }
@@ -153,7 +158,11 @@ input{
     color: rgb(78,125,248);
     font-size: 36px;
     font-weight: 1000;
+    transition: 0.5s ease-in-out;
    
+}
+#span{
+    transition: 0.5s ease-in-out;
 }
 .disp{
     background-color: #EAEAEA;
@@ -183,7 +192,7 @@ input{
     width: 80%;
     height: 80%;
     border: 4px solid transparent;
-    margin:5em 0.1em 0.1em 0.3em; 
+    margin:6em 0.1em 0.1em 0.3em; 
     padding:1em ;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
@@ -192,12 +201,12 @@ input{
     z-index: 1000;
     backdrop-filter: blur(5px);
     box-shadow: 10px 10px 10px -10px rgba(46, 54, 68,0.03);
-    /* opacity: 0.9; */
+    transition: 0.5s;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+
     align-items: center;
-    /* border: 3px solid black; */
+ 
 }
 .h1-info{
     margin: 0.5em  0 ;
@@ -216,3 +225,24 @@ input{
     font-weight: 900;
 }
 
+@media screen and (min-width:760px) {
+    .wrapper{
+        width: 80%;
+        max-width: 60%;
+    }
+    
+   
+}
+
+@media screen and (min-width:1200px) {
+    .wrapper{
+        width: 40%;
+        margin: 3em auto;
+    }
+    .img{
+        margin: 0.5em 0.5em 0.5em 90%;
+        background-color: white;
+        color: rgb(78,125,248);
+    }
+    
+}   

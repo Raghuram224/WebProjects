@@ -1,12 +1,10 @@
 const INFOWINDOW = document.getElementById("info");
 const BMIWINDOW = document.getElementById('bmi-box');
 let buttonCount = 0;
-
-let height=document.getElementById("height");
-let weight= document.getElementById("weight");
 let result=document.getElementById("res");
 let span= document.getElementById("span");
-
+let height;
+let weight;
 function comment(output){
     output=parseFloat(output);   
     console.log(output);
@@ -33,6 +31,8 @@ function comment(output){
 }
 
 function main(){
+    height=document.getElementById("height");
+    weight= document.getElementById("weight");
     if(height.value !=""  && weight.value !=""){
         height=parseFloat(height.value)/100;       
         let output=parseFloat(weight.value)/(height*height);
