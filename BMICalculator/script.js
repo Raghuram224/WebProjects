@@ -46,7 +46,7 @@ function main(){
 function showInfo(){
 
     if (buttonCount % 2 === 0){
-        INFOWINDOW.style.transform = 'translateX(-100%)';
+        INFOWINDOW.style.transform = 'translateX(-115%)';
     }
     else {
         INFOWINDOW.style.transform = 'translateX(0%)';
