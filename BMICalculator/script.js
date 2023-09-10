@@ -1,5 +1,6 @@
 const INFOWINDOW = document.getElementById("info");
 const BMIWINDOW = document.getElementById('bmi-box');
+
 let buttonCount = 0;
 let result=document.getElementById("res");
 let span= document.getElementById("span");
@@ -47,6 +48,7 @@ function showInfo(){
 
     if (buttonCount % 2 === 0){
         INFOWINDOW.style.transform = 'translateX(-115%)';
+       
     }
     else {
         INFOWINDOW.style.transform = 'translateX(0%)';
