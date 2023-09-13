@@ -3,11 +3,14 @@ const WORD = document.getElementById("word");
 const TEXTAREA = document.getElementById("textarea");
 const SENTENCE=document.getElementById("sentence");
 const PARAGRAPH=document.getElementById("paragraph");
-// let length=TEXTAREA.value.length;
 
 function wordCount(){
     let count=1;    
+
     let value=TEXTAREA.value;
+    if(value==""){
+        return 0;
+    }
     for(let i=0;i<value.length;i++){
         if(value.charAt(i)==" " && value.charAt(i+1)!=" " && value.charAt(i+1)){
             count++;
@@ -32,6 +35,9 @@ function paragraph(){
     let value=TEXTAREA.value;
     let paragraphCount=1;
     let isNewParagaraph;
+    if(value==""){
+        return 0;
+    }
     for(let i=0;i<value.length;i++){
         if(value[i]==='\n' && value[i+1]=='\n'){
             isNewParagaraph=true;
