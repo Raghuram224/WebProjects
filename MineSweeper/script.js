@@ -6,7 +6,7 @@ const WRAPPER= _id('wrapper');
 const DASHBOARD= _id('dashboard');
 const SCORE_BOARD=_id('score');
 let list=[]
-
+let stop=true;
 function _id(id){
     return document.getElementById(id);
 
@@ -18,22 +18,24 @@ function random(){
 }
 
 function disappear(element){
-    // console.log("element "+element.id);
-    console.log(list);
+    
+    
     if(!list.includes(element.id) && score<15){
         list.push(element.id);
         if(element.id !=`b${bombPosition}`){
-     
-            element.innerHTML=`<img src="assets/coin.gif"class="bomb">`; 
-            score++;
-            SCORE_BOARD.textContent=score
-            let coinAudio= new Audio('assets/coin.mp3');
-            coinAudio.play();
-            coinAudio.volume=0.3;
+            if(stop){
+                element.innerHTML=`<img src="assets/coin.gif"class="bomb">`; 
+                score++;
+                SCORE_BOARD.textContent=score
+                let coinAudio= new Audio('assets/coin.mp3');
+                coinAudio.play();
+                coinAudio.volume=0.3;
+            }
+            
     
         }
         else{
-            
+            stop=false;
             return loose(element);
             
             // console.log("click");
@@ -56,7 +58,7 @@ function dashboard(score){ //for winner
 
     }
 }
-let stop=false;
+
 function loose(element){ //for loose    
 
     element.innerHTML=`<img src="assets/bomb.gif"class="bomb" >`;  
@@ -68,7 +70,7 @@ function loose(element){ //for loose
         
     }, 900);
       
-    
+    start=true;
     return setTimeout(() => {
         
     
@@ -83,6 +85,7 @@ function loose(element){ //for loose
 
 
 function main(){
+    
     let string="";
     for(let i=1;i<=16;i++){
         string+=`<span class="box" id=b${i} onclick="disappear(this)"> <a class="num"> ${i}</a></span>`;
@@ -92,11 +95,15 @@ function main(){
 }
 
 function init(){
+   
     let start = new Audio('assets/start.mp3');
     start.play();
+    stop=true;
     main();
      bombPosition = random();
-     console.log(bombPosition);
+     
+
+  
      WRAPPER.style.display="block flex";
      list=[];
      DASHBOARD.innerHTML=" ";
