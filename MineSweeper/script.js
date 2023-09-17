@@ -14,17 +14,32 @@ function disappear(element){
             element.innerHTML=`<img src="assets/coin.gif"class="bomb">`; 
             score++;
             SCORE_BOARD.textContent=score
+            let coinAudio= new Audio('assets/coin.mp3');
+            coinAudio.play();
+            coinAudio.volume=0.3;
     
         }
         else{
            
-            element.innerHTML=`<img src="assets/bomb.gif"class="bomb" >`;        
+            element.innerHTML=`<img src="assets/bomb.gif"class="bomb" >`;  
+            let audio= new Audio('assets/bombsound.mp3');    
+            
+            setTimeout(() => {
+                audio.play();   
+            audio.volume=0.5;
+                
+            }, 900);
+              
             
             return setTimeout(() => {
+                
+            
                 DASHBOARD.innerHTML=`<a class="runner">Bomb Clicked</a>`;
                 WRAPPER.style.display="none";
-            
-                }, 1500);
+                let loose=new Audio('assets/loose.mp3');
+                loose.play();
+                
+                }, 2000);
             
             // console.log("click");
             
@@ -58,6 +73,8 @@ function random(){
 function dashboard(score){
     if(score==15){
         DASHBOARD.innerHTML=`<a class="winner">You Win</a>`;
+        let win= new Audio('assets/win.mp3');
+        win.play();
 
     }
 }
