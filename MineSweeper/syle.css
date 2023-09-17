@@ -1,0 +1,86 @@
+html,body{
+    height: 100%;
+    width: 100%;
+
+}
+body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 350ms ease-in-out;
+}
+.title>*{
+    padding: 0.5em;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+.wrapper{
+   width: 300px;
+   height: 300px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   align-content: flex-start;
+   
+}
+.box{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    /* border-radius: 10px; */
+    margin: 0.1em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: rgb(193,193,192);
+
+}
+.bomb{
+    /* background-image:url('bomb.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(193,193,192);
+    /* border: 1px solid black ; */
+    /* margin: 0 auto; */
+}
+.btn{
+    padding: 1em;
+    width: 100px;
+    font-size: 1.1em;
+}
+.winner{
+    background-color: gold;
+    color:  white;
+    font-size: 40px;
+    transition: 2s ease-in-out;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: block;
+    padding: 0.2em;
+}
+.runner{
+    background-color: red;
+    color: white;
+    font-size: 40px;
+    /* transition: 2s ease-in-out; */
+    width: 100%;
+    /* border: 1px solid black; */
+    display: block;
+    padding: 0.2em;
+}
+.mine{
+    width:50px ;
+}
