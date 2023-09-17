@@ -36,14 +36,15 @@ h4{
     text-align: center;
 }
 .wrapper{
-   width: 300px;
-   height: 300px;
+   width: 80%;
+   
    display: flex;
-   justify-content: center;
+   justify-content:center;
    align-items: center;
    flex-wrap: wrap;
-   margin: 0 auto;
+   margin: 1em auto;
    align-content: flex-start;
+   /* border: 3px solid black; */
    
 }
 .box{
@@ -79,7 +80,7 @@ h4{
     font-size: 1.1em;
 }
 .winner{
-    background-color:gold;
+    background-color:gold   ;
     color:  white;
     font-size: 40px;
     transition: 2s ease-in-out;
@@ -112,4 +113,22 @@ h4{
     color: #ffae42;
     font-weight: 900;
     font-size: 25px;
+}
+
+@media screen and (min-width:481px) {
+    .wrapper{
+        width: 60%;
+        /* height: 400px; */
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+    }
+    
+}
+
+@media screen and (min-width:822px) {
+    .wrapper{
+        width: 25%;
+    }
 }

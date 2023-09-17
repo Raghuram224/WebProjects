@@ -71,8 +71,7 @@ function loose(element){ //for loose
     }, 900);
       
     start=true;
-    return setTimeout(() => {
-        
+    return setTimeout(() => {       
     
         DASHBOARD.innerHTML=`<a class="runner result">GAME OVER</a>`;
         WRAPPER.style.display="none";
@@ -100,13 +99,13 @@ function init(){
     start.play();
     stop=true;
     main();
-     bombPosition = random();
-     
+    bombPosition = random();
+    console.log(bombPosition) 
 
   
-     WRAPPER.style.display="block flex";
-     list=[];
-     DASHBOARD.innerHTML=" ";
-     score=0;
+    WRAPPER.style.display="block flex";
+    list=[];
+    DASHBOARD.innerHTML=" ";
+    score=0;
     
 }
