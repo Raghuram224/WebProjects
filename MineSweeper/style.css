@@ -117,21 +117,3 @@ h4{
     font-weight: 900;
     font-size: 25px;
 }
-
-/* @media screen and (min-width:481px) {
-    .wrapper{
-        width: 50%;
-        
-    }
-    .box{
-        width: 100px;
-        height: 100px;
-    }
-    
-}
-
-@media screen and (min-width:822px) {
-    .wrapper{
-        width: 25%;
-    }
-} */
