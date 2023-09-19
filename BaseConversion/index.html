@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <form>
+            <input type="text" id="input-box" placeholder="Enter your number:">
+     
+        
+        <div class="option-box">
+            <select name="box-one" class="box" id="box-one">
+                <option value="binary">01(Binary)</option>
+                <option value="decimal">10(Decimal)</option>
+                <option value="octal">8(Octal)</option>
+                <option value="hexa">16(HexaDecimal)</option>
+            </select>
+            <select name="box-two" class="box" id="box-two">
+                <option value="binary">01(Binary)</option>
+                <option value="decimal">10(Decimal)</option>
+                <option value="octal">8(Octal)</option>
+                <option value="hexa">16(HexaDecimal)</option>
+            </select>
+        </div>
+        <div class="btns">
+            <button type="reset" id="clear"  >Clear</button>
+            <button type="submit" id="calc" onclick="init()">Calculate</button>
+        </div>
+        <div class="result">
+            <h3>Converted Numbers:</h3>
+            <div class="display" id="display">0</div>
+        </div>
+    </form>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
