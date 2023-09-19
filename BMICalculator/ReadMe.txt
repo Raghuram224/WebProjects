@@ -1,3 +1,3 @@
 
 Website Link:
-https://raghuram224.github.io/Web-development/BMICalculator/
+https://raghuram224.github.io/WebProjects/BMICalculator/
