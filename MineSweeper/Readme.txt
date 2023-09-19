@@ -1,2 +1,1 @@
-
-https://raghuram224.github.io/Web-development/MineSweeper/
+https://raghuram224.github.io/WebProjects/MineSweeper/
