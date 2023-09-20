@@ -1,16 +1,13 @@
+
+
 function _(id){
    return document.getElementById(id);
 }
 
-function clearInput(){
-   let input=_('input');
-   input.te
-}
 
 
-function init(){
-    console.log("init");
-}
+
+
 
 function anyBase(num,base=2){
     if(num==0){
@@ -50,4 +47,21 @@ function binaryToDecimal(binary){
     return sum;
 }
 
-console.log(binaryToDecimal("1010"));
+// const INPUT=_('input');
+const BOX_ONE=_('box-one');
+function boxOne(option){
+    let drpdown1 = val;
+    let drpdown2 = val;
+
+    if(drpdown1 == decimal && drpdown2 == binary){
+
+    }else if(dp == decimal &&bdp2 == octal)0
+
+}
+
+
+function main(){
+    // console.log(BOX_ONE);  
+    console.log("clicked");
+}
+
