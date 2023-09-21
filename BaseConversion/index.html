@@ -9,26 +9,31 @@
 <body>
     <section>
         <form>
-            <input type="text" id="input-box" placeholder="Enter your number:">
-     
+            <input type="text" class="input" id="input-box" placeholder="Enter your number:"> 
         
         <div class="option-box">
-            <select name="box-one" class="box" id="box-one">
-                <option value="binary">01(Binary)</option>
-                <option value="decimal">10(Decimal)</option>
-                <option value="octal">8(Octal)</option>
-                <option value="hexa">16(HexaDecimal)</option>
+            <select name="box-one" class="box border" id="box-one">
+                <option value="binary">Binary</option>
+                <option value="decimal">Decimal</option>
+                <option value="octal">Octal</option>
+                <option value="hexa">HexaDecimal</option>
             </select>
-            <select name="box-two" class="box" id="box-two">
-                <option value="binary">01(Binary)</option>
-                <option value="decimal">10(Decimal)</option>
-                <option value="octal">8(Octal)</option>
-                <option value="hexa">16(HexaDecimal)</option>
+            <img src="assets/converter.svg" class="symbol">
+            <select name="box-two" class="box border" id="box-two">
+                <option value="binary">Binary</option>
+                <option value="decimal">Decimal</option>
+                <option value="octal">Octal</option>
+                <option value="hexa">HexaDecimal</option>
             </select>
         </div>
         <div class="btns">
-            <button type="reset" id="clear"  >Clear</button>
-            <button type="button" id="calc" onclick="main()">Calculate</button>
+            <!-- <button type="reset" id="clear" class="border"  ><img src="https://lottie.host/1d530321-d375-4313-8494-9dd226e790eb/VaqlLo2Swj.json" class="trash"></button> -->
+            <button type="reset" id="clear" class="border"  >
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+                <dotlottie-player src="https://lottie.host/1d530321-d375-4313-8494-9dd226e790eb/VaqlLo2Swj.json" background="transparent" speed="1" style="width: 50px; height: 40px;" loop autoplay>
+                </dotlottie-player>
+            </button>
+            <button type="button" id="calc"class="border" onclick="main()">Calculate</button>
         </div>
         <div class="result">
             <h3>Converted Numbers:</h3>
