@@ -2,12 +2,7 @@
 
 function _(id){
     return document.getElementById(id);
- }
- 
- 
- 
- 
- 
+ } 
  
  function anyBase(num,base=2){
      if(num==0){
@@ -37,19 +32,23 @@ function _(id){
  
  }
  
- // console.log(anyBase(5,2));
+
  
  function anyBaseToDecimal(binary,base=2){
-     let sum=0
-     for(let i=binary.length-1, j=0;i>=0;i--,j++){
-       sum+=(parseInt(binary[i])*Math.pow(base,j))
-     }
-     return sum;
+    let sum=0
+	const hexa={'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15,'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15};
+    
+	for(let i=binary.length-1, j=0;i>=0;i--,j++){
+		let value=hexa[binary[i]];
+		sum+=(parseInt(value)*Math.pow(base,j))
+	}
+
+    return sum;
  }
  
  
  
- 
+
  
  function main(){
      let inp=_('input-box');
@@ -65,6 +64,7 @@ function _(id){
          }
          //binary to
          else if(drpdown1.value=="binary" && drpdown2.value=="decimal"){
+			output=
              output=anyBaseToDecimal(inp.value);
              display.textContent=output;
  
@@ -102,13 +102,24 @@ function _(id){
              display.textContent=result;
          }
          else if(drpdown1.value=="octal" && drpdown2.value=="hexa"){            
-             output=anyBaseToDecimal(inp.value,8);
-             console.log(output);
+             output=anyBaseToDecimal(inp.value,8);             
              result=anyBase(output,16);
              display.textContent=result;
  
          }//Hexadecimal to
-         else if(drpdown1.value="hexa" && drpdown2.value=="binary"){
+         else if(drpdown1.value=="hexa" && drpdown2.value=="binary"){
+			output=anyBaseToDecimal(inp.value,16);
+			result=anyBase(output);
+			display.textContent=result;
+ 
+         }else if(drpdown1.value=="hexa" && drpdown2.value=="decimal"){
+			result=anyBaseToDecimal(inp.value,16);			
+			display.textContent=result;
+ 
+         }else if(drpdown1.value=="hexa" && drpdown2.value=="octal"){
+			output=anyBaseToDecimal(inp.value,16);
+			result=anyBase(output,8);
+			display.textContent=result;
  
          }
  
@@ -122,8 +133,7 @@ function _(id){
          
      }
      
-     // console.log(BOX_ONE);  
-     
+  
  }
  
  
