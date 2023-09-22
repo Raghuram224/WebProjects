@@ -16,12 +16,13 @@ html,body{
 
 
 .wrapper{
+    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    overflow:hidden;
+    
 }
 
 .name{
