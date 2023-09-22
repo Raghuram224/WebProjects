@@ -124,6 +124,7 @@ img{
 .result >*{
     margin-top: 2em;
     font-size: 1.3em;
+    color: white;
 }
 
 .input{
