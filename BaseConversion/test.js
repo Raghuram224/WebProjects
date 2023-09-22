@@ -100,3 +100,17 @@
 //  }
 
 //  console.log(anyBaseToDecimal("f",16));
+
+
+function anyBaseToDecimal(binary,base=2){
+    let sum=0
+	const hexa={'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15,'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15};
+    
+	for(let i=binary.length-1, j=0;i>=0;i--,j++){
+		let value=hexa[binary[i]];
+		sum+=(parseInt(value)*Math.pow(base,j));
+	}
+
+    return sum;
+ }
+console.log(anyBaseToDecimal("12",8));
