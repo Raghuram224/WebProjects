@@ -133,7 +133,7 @@ function clearValue() {
          }
          setTimeout(() => {
             display.textContent=result;
-         }, 500);
+         }, 100);
         
      } catch (err) {
          console.log(err);

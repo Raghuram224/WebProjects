@@ -7,45 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="name">
+   <div class="wrapper">
+    <div class="name">
         <p>Base Conversion <img src="assets/logo.png"></p>
-        </div>
+</div>
 
-    <section>
-        <form>
-            <input type="text" class="input" id="input-box" placeholder="Enter your number:"> 
-        
-        <div class="option-box">
-            <select name="box-one" class="box border" id="box-one">
-                <option value="binary">Binary</option>
-                <option value="decimal">Decimal</option>
-                <option value="octal">Octal</option>
-                <option value="hexa">Hexa</option>
-            </select>
-            <img src="assets/converter.svg" class="symbol">
-            <select name="box-two" class="box border" id="box-two">
-                <option value="binary">Binary</option>
-                <option value="decimal">Decimal</option>
-                <option value="octal">Octal</option>
-                <option value="hexa">Hexa</option>
-            </select>
-        </div>
-        <div class="btns">
-            <!-- <button type="reset" id="clear" class="border"  ><img src="https://lottie.host/1d530321-d375-4313-8494-9dd226e790eb/VaqlLo2Swj.json" class="trash"></button> -->
-            <button type="reset" id="clear" class="border" onclick="clearValue()"  >
-                <img src="assets/trash.svg" class="trash">
-            </button>
-            <button type="button" id="calc"class="border" onclick="main()">Calculate</button>
-        </div>
-        <div class="result">
-            <h3>Converted / Numbers</h3>
-            
-            <div class="display border" id="display">0</div>
-        </div>
-    </form>
-    </section>
+<section>
+    <form>
+        <input type="text" class="input" id="input-box" placeholder="Enter your number:"> 
+    
+    <div class="option-box">
+        <select name="box-one" class="box border" id="box-one">
+            <option value="binary">Binary</option>
+            <option value="decimal">Decimal</option>
+            <option value="octal">Octal</option>
+            <option value="hexa">Hexa</option>
+        </select>
+        <img src="assets/converter.svg" class="symbol">
+        <select name="box-two" class="box border" id="box-two">
+            <option value="binary">Binary</option>
+            <option value="decimal">Decimal</option>
+            <option value="octal">Octal</option>
+            <option value="hexa">Hexa</option>
+        </select>
     </div>
+    <div class="btns">
+        <!-- <button type="reset" id="clear" class="border"  ><img src="https://lottie.host/1d530321-d375-4313-8494-9dd226e790eb/VaqlLo2Swj.json" class="trash"></button> -->
+        <button type="reset" id="clear" class="border" onclick="clearValue()"  >
+            <img src="assets/trash.svg" class="trash">
+        </button>
+        <button type="button" id="calc"class="border" onclick="main()">Calculate</button>
+    </div>
+    <div class="result">
+        <h3>Converted / Numbers</h3>
+        
+        <div class="display border" id="display">0</div>
+    </div>
+</form>
+</section>
+
+
+   </div>
     
     <script src="script.js"></script>
 </body>

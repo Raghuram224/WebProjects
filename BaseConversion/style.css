@@ -6,8 +6,7 @@
 }
 html,body{
     width: 100%;
-
-    background-color: #252423;
+        background-color: #252423;
 }
 :root{
     --violet:#FE4B4A;
@@ -15,29 +14,27 @@ html,body{
     --black:rgba(0,0, 0, 0.1);
 }
 
+
 .wrapper{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
-/* .wrapper div:nth-child(1){
-    text-align: right;
-    margin: 0 right;
-    border-bottom: 2px solid white;
-    color: var(--violet);
-    width: 60%;
 
-} */
 .name{
     color: var(--violet);
     font-size: 1.5em;
     font-weight: bolder;
     padding: 1em;
-    width: 100%;   
+     /* width: 100%;     */
     display: flex;
-    justify-content: right;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     margin: 0.5em;
+
+    flex-shrink: 1;
 }
 section{
     height: 70vh;
@@ -52,8 +49,7 @@ section{
     background-repeat: no-repeat;
     background-size:cover;    
     border-radius: 20px;
-    max-width: 500px;
-    /* border: 1px solid black; */
+   
     
    
     
@@ -83,12 +79,9 @@ section>*{
 }
 img{
     width: 20%;
-    /* border: 2px solid black; */
-    /* height: 10%; */
+   
 }
-/* .symbol{
-    margin-top: 9%;
-} */
+
 .box{
     display: block;
     margin: 1em;width: 50%;
@@ -175,4 +168,23 @@ img{
     color: var(--violet);
     font-weight: 900;
     margin-bottom: 1em;
+}
+
+@media screen and (min-width:481px) {
+    img{
+        width: 10%;
+    }
+    .wrapper{
+        width: 70%;
+    }
+    
+}
+@media screen and (min-width:822px) {
+    img{
+        width: 10%;
+    }
+    .wrapper{
+        width: 40%;
+    }
+    
 }
