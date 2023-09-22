@@ -56,7 +56,9 @@ section{
    
 }
 form{
-    
+    transform: translateY(100%);
+    transition: 350ms ease-in-out;
+    opacity: 0;
     padding: 1em;
     outline: none;
     border: none;
@@ -69,6 +71,10 @@ form{
     /* border: 2px solid black; */
     padding: 1em;
     /* box-shadow: 1px 1px 1px rgba(0,0, 0, 0.5); */
+}
+.wrapper:hover form{
+    transform: translate(0);
+    opacity: 1;
 }
 form>*{
     color: rgba(255, 255, 255, 0.7);
