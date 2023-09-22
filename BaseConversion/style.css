@@ -6,7 +6,7 @@
 }
 html,body{
     width: 100%;
-    height: 100vh;
+
     background-color: #252423;
 }
 :root{
@@ -15,12 +15,34 @@ html,body{
     --black:rgba(0,0, 0, 0.1);
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* .wrapper div:nth-child(1){
+    text-align: right;
+    margin: 0 right;
+    border-bottom: 2px solid white;
+    color: var(--violet);
+    width: 60%;
 
-
+} */
+.name{
+    color: var(--violet);
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 1em;
+    width: 100%;   
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    margin: 0.5em;
+}
 section{
-   
+    height: 70vh;
     width: 90%;
-    margin: 5em auto;    
+    margin:1em auto;    
     display: flex;    
     justify-content: center;
     padding: 0.5em;
@@ -71,7 +93,7 @@ img{
     display: block;
     margin: 1em;width: 50%;
     padding: 0.5em;
-    font-size: 1em;
+    font-size: 1.2em;
     width: 50%;
     color: white;
     font-weight: 500;
@@ -88,6 +110,7 @@ img{
     
 }
 .btns{
+    margin-top: 1em;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -126,7 +149,7 @@ img{
     display: block;
     background-color: var(--black);
     /* box-shadow: 1px 1px 1px; */
-    font-size: 1.3em;
+    /* font-size: 1.3em; */
     padding: 0.5em;
     border-radius: 10px;
     /* border-style: outset; */
