@@ -188,6 +188,9 @@ img{
     .wrapper{
         width: 70%;
     }
+    form{
+        height: 80%;
+    }
     
 }
 @media screen and (min-width:822px) {
@@ -196,6 +199,9 @@ img{
     }
     .wrapper{
         width: 40%;
+    }
+    form{
+        height: 80%;
     }
     
 }

@@ -65,7 +65,7 @@ function clearValue() {
  
      try {
          if(drpdown1.value==drpdown2.value){
-             display.textContent="Both are same!";
+             result= "0";
          }
          //binary to
          else if(drpdown1.value=="binary" && drpdown2.value=="decimal"){
