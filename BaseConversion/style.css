@@ -96,7 +96,7 @@ img{
     padding: 0.5em;
     font-size: 1.2em;
     width: 50%;
-    /* color: white; */
+    color: white;
     font-weight: 500;
 
  
@@ -112,7 +112,7 @@ img{
 }
 .btns{
     margin-top: 1em;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
    
@@ -130,6 +130,7 @@ img{
 }
 
 .input{
+    text-align: center;
     display: block;
     margin:auto ;
     font-size: 1.3em;
@@ -141,6 +142,7 @@ img{
     outline: none;
     margin-top: 1em;
     font-weight: 800;
+    width: 90%;
     
     
 }
