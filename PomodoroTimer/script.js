@@ -15,3 +15,4 @@ function timer(){
 
 }
 const TIMEINTERVEL=setInterval(timer,1000);
+
