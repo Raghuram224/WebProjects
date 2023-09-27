@@ -7,19 +7,41 @@ html,body{
     width: 100%;
     height: 100%;
 }
-body{
-    background-color: burlywood;
+/* body{
+   
+} */
+
+section{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  
+}
+img{
+    width: 30px;
 }
 .wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* border: 2px solid black; */
     
 }
 .timer{
     width: 300px;
     height: 300px;
+    /* border: 2px solid black; */
+    background: url('assetes/wave.svg'); 
+    background-repeat: repeat-x;
+    animation: anim 20s linear infinite;
+    z-index: 10000;
+    overflow: hidden;
+    clip-path: circle(50% at 50% 50%);
+      
 }
 .wave1,.wave2{
     height: 100%;
@@ -33,22 +55,18 @@ body{
     align-items: center;
     flex-direction: column;
     background-position: bottom;
-    background: url('assetes/wave.svg');
- 
-    background-repeat: repeat-x;
-    animation: anim 20s linear infinite;
-    z-index: 10000;
+    
  
 }
 .wave1{
     animation: anim 10s linear infinite;
-    animation-delay: 2s;
+    animation-delay: 1s;
 
     z-index: 999;
 }
 .wave2{
-    animation: anim 5s linear infinite;
-    animation-delay: 5s;
+    animation: anim 1s linear infinite;
+   
     
     z-index: 99;
 }
