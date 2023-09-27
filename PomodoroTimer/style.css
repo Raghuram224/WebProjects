@@ -34,13 +34,14 @@ img{
 .timer{
     width: 300px;
     height: 300px;
-    /* border: 2px solid black; */
+    border: 2px solid black;
     background: url('assetes/wave.svg'); 
     background-repeat: repeat-x;
     animation: anim 20s linear infinite;
     z-index: 10000;
     overflow: hidden;
-    clip-path: circle(50% at 50% 50%);
+    /* clip-path: circle(50% at 50% 50%); */
+  
       
 }
 .wave1,.wave2{

@@ -1,12 +1,33 @@
-const countdownTimeInSeconds = 5;
+const countdownTimeInSeconds = 60;
 let remainingTime = countdownTimeInSeconds;
+let timer;
+let timerStatus = false;
 
+const  TIME=_('time');
+const MESSAGE=_('msg');
 
+function _(id){
+    return document.getElementById(id);
+}
 
+function reset(){
+    TIME.textContent="00:00";
+    pause();
+    remainingTime=countdownTimeInSeconds;
+    timerStatus=false;
+}
+
+function pause(){
+    console.log("pause");
+    clearInterval(timer);
+    timerStatus=false;
+    
+}
 function startTimer(){
-    const minutes=Math.floor(remainingTime/60);
-    const seconds=remainingTime%60;
-
+    let minutes=Math.floor(remainingTime/60);
+    let seconds=remainingTime%60;
+    console.log(remainingTime);
+    
     console.log(`${minutes}:${seconds}`);
     if(remainingTime===0){
         
@@ -16,19 +37,17 @@ function startTimer(){
         
     }else{        
         TIME.textContent=`${minutes}:${seconds}`;
-        remainingTime--;
+        console.log(remainingTime);
+        remainingTime-=1;
     }
 
 }
-function _(id){
-    return document.getElementById(id);
-}
-// const TIMEINTERVEL=0;
-const  TIME=_('time');
-const MESSAGE=_('msg');
-
 
 function start(){
-    let timeStarts= setInterval(startTimer,1000);
+    
+    if(!timerStatus){
+      timer=setInterval(startTimer,1000);
+    timerStatus = true;
+    }
     // TIME.textContent=timeStarts;
 }
