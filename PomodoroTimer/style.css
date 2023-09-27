@@ -2,6 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 350ms ease-in-out;
 }
 html,body{
     width: 100%;
@@ -10,9 +12,19 @@ html,body{
 /* body{
    
 } */
-
-section{
+.page{
     height: 100%;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    
+    margin: auto;
+    border: 2px solid red;
+    
+}
+
+.section1{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +49,9 @@ img{
     border: 2px solid black;
     background: url('assetes/wave.svg'); 
     background-repeat: repeat-x;
-    animation: anim 20s linear infinite;
+    /* background-position: 10px; */
+    animation: anim 10s linear infinite;
+
     z-index: 10000;
     overflow: hidden;
     /* clip-path: circle(50% at 50% 50%); */
@@ -76,6 +90,12 @@ img{
 }
 .result{
     font-size: 2.5em;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 @keyframes anim {

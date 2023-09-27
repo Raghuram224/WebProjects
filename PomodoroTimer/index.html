@@ -7,30 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <div class="wrapper">
-            <div class="timer">
-                <div class="wave1">
-                    <div class="wave2">
-                        <p class="name">Work</p>
-                        <div class="result">
-                            <span class="time" id="time">00:00</span>
-                            <p class="msg" id="msg"></p>
-                        </div>
-                    </div>                   
-                </div>             
-               
-                
-            </div>
-            <div class="btns">
-                <button type="button" class="start" id="start" onclick="start()"><img src="assetes/play.svg" alt=""  ></button>
-                <button type="button" class="pause" id="pause" onclick="pause()"><img src="assetes/pause.svg" alt=""></button>
-                <button type="button" class="reset" id="reset"onclick="reset()"><img src="assetes/reset.svg" alt=""></button>
-            </div>
-        </div>
-        
-    </section>
-
+    <div class="page">
+        <section class="section1">
+            <div class="wrapper">
+                <div class="timer">
+                    <div class="wave1">
+                        <div class="wave2">
+                            <p class="name">Work</p>
+                            <div class="result">
+                                <span class="time" id="time">00:00</span>
+                                <p class="msg" id="msg"></p>
+                            </div>
+                        </div>         
+                    </div>             
+                   
+                    
+                </div>
+                <div class="btns">
+                    <button type="button" class="start" id="start" onclick="start()"><img src="assetes/play.svg" alt=""  ></button>
+                    <button type="button" class="pause" id="pause" onclick="pause()"><img src="assetes/pause.svg" alt=""></button>
+                    <button type="button" class="reset" id="reset"onclick="reset()"><img src="assetes/reset.svg" alt=""></button>
+                </div>
+            </div>        
+        </section>
+        <section class="section2">
+            <form>
+                <input type="range" value="range-input" id="time-input" min="5" max="60" step="5" oninput="updateTimer()">
+                <label for="range-input">Set Time</label>
+                <p>Time: <span id="time-range">0</span></p>
+                <input type="range" value="range-input" id="break-input" min="1" max="10" step="1" oninput="updateBreak()">
+                <label for="range-input">Set Break</label>
+                <p>Break: <span id="break-range">0</span></p>
+            </form>
+            <button type="button" onclick="darkMode()"><img src="assetes/moon.svg"> </button>
+        </section>
+    
+    </div>
+   
 
 
     <script src="script.js"></script>
