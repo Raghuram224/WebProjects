@@ -12,6 +12,40 @@ html,body{
 /* body{
    
 } */
+/* menubar */
+.menu{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5em;
+    position: relative;
+}
+.bar{
+    border-radius: 20px;
+    width: 90%;
+    height:5px;
+    background-color: black;
+    transition: 350ms ease-in-out;
+    
+    
+}
+.menu:hover .box1{
+    
+    transform: translatey(6.5px) rotate(45deg);
+    
+}
+.menu:hover .box3{
+    transform: translatey(-6.5px) rotate(-45deg);
+    
+}
+.menu:hover .box2{
+  display: none;
+    
+}
 .page{
     height: 100%;
     display:flex ;
