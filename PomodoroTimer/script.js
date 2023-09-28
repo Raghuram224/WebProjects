@@ -17,6 +17,7 @@ function darkMode(){
         dark_mode++;
         document.body.style.transition="350ms ease-in-out";
         
+        
     }
     else{
         document.body.style.backgroundColor='white';
