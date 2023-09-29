@@ -1,6 +1,7 @@
-const countdownTimeInSeconds = 60;
+const countdownTimeInSeconds = 6;
 let remainingTime = countdownTimeInSeconds;
 let timer;
+let startCount=0;
 let timerStatus = false;
 let dark_mode=0;
 
@@ -45,6 +46,9 @@ function reset(){
     pause();
     remainingTime=countdownTimeInSeconds;
     timerStatus=false;
+     
+    remainingTime = countdownTimeInSeconds;
+    MESSAGE.textContent=" ";
 }
 
 function pause(){
@@ -74,7 +78,14 @@ function startTimer(){
 }
 
 function start(){
-    
+    if(startCount%2==0){
+        
+        remainingTime = countdownTimeInSeconds;
+        MESSAGE.textContent=" ";
+        
+        console.log(startCount)
+    }
+    startCount++;
     if(!timerStatus){
       timer=setInterval(startTimer,1000);
     timerStatus = true;

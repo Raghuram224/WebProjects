@@ -7,28 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <div class="navbar">
         <h3>Pomodoro Timer</h3>
         <div class="menu">
             <div class="bar box1"></div>
             <div class="bar box2"></div>
             <div class="bar box3"></div>
         </div>
-    </nav>
-    <div class="settings">
-        <p class="desc">The Pomodoro Technique is a time management method based on 25-minute stretches of focused work broken by five-minute breaks. Longer breaks, typically 15 to 30 minutes, are taken after four consecutive work intervals. Each work interval is called a pomodoro, the Italian word for tomato (plural: pomodori).</p>
-        <form>
-            
-            <input type="range" value="range-input" id="time-input" min="5" max="60" step="5" oninput="updateTimer()">
-            <label for="range-input">Set Time</label>
-            <p>Time: <span id="time-range">0</span></p>
-            <input type="range" value="range-input" id="break-input" min="1" max="10" step="1" oninput="updateBreak()">
-            <label for="range-input">Set Break</label>
-            <p>Break: <span id="break-range">0</span></p>
-        </form>
-        <button type="button" onclick="darkMode()"><img src="assetes/moon.svg"> </button>
-    </div>
     
+        <div class="settings">
+            <p class="desc">The Pomodoro Technique is a time management method based on 25-minute stretches of focused work broken by five-minute breaks. Longer breaks, typically 15 to 30 minutes, are taken after four consecutive work intervals. Each work interval is called a pomodoro, the Italian word for tomato (plural: pomodori).</p>
+        
+            <form>
+                
+                <input type="range" value="range-input" id="time-input" min="5" max="60" step="5" oninput="updateTimer()">
+                <label for="range-input">Set Time</label>
+                <p>Time: <span id="time-range">0</span></p>
+                <input type="range" value="range-input" id="break-input" min="1" max="10" step="1" oninput="updateBreak()">
+                <label for="range-input">Set Break</label>
+                <p>Break: <span id="break-range">0</span></p>
+                
+                <button type="button" class="moonbtn" onclick="darkMode()"><img src="assetes/moon.svg"> </button>
+            </form>
+            
+        </div>
+    
+    </div>
+        
     
         <section class="section1">
             <div class="wrapper">
@@ -45,7 +50,7 @@
                     
                 </div>
                 <div class="btns">
-                    <button type="button" class="start" id="start" onclick="start()"><img src="assetes/play.svg" alt=""  ></button>
+                    <button type="button" class="start" id="start" onclick="start()"><img src="assetes/start.svg" alt=""  ></button>
                     <button type="button" class="pause" id="pause" onclick="pause()"><img src="assetes/pause.svg" alt=""></button>
                     <button type="button" class="reset" id="reset"onclick="reset()"><img src="assetes/reset.svg" alt=""></button>
                 </div>

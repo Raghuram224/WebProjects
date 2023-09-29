@@ -10,28 +10,45 @@ html,body{
     width: 100%;
     height: 100%;
 }
-/* body{
-   
-} */
-/* menubar */
-nav{
-    display: flex;
+
+.navbar{
+    
     justify-content: space-between;
     align-items: center;
     margin: 1em;
-    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-
+    position: relative;
+  
+}
+.navbar>h3{
+    color: #6EB9E3;
+    font-size: 20px;
+    font-weight: 900;
 }
 .settings{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    /* border: 1px solid black; */
+    width: 80%;
+    font-weight: 400;
+    padding: 0.5em;
+    margin: auto;
+    margin-top: -10%;
+    transform:  translateX(-100%) translateY(-100%) scale(0);
+    border-radius: 20px;
+    margin-left: 3em;
+    position: absolute;
+    backdrop-filter: blur(80px);
+    z-index: 1000000;
+    color: white;
 }
 .desc{
-    text-align: justify;
-    width: 60%;
+    text-align: end;
+    padding: 0.5em;
+    font-size: 1.3em;
     margin: auto;
+ 
     /* visibility: hidden; */
 }
 .menu{
@@ -46,15 +63,22 @@ nav{
     align-items: center;
     padding: 0.5em;
     position: relative;
+    
 }
 .bar{
     border-radius: 20px;
     width: 90%;
     height:5px;
-    background-color: black;
+    background-color: #6EB9E3;
     transition: 350ms ease-in-out;
     
     
+}
+.menu:hover ~ .settings{
+    transform: translateX(0) translateY(0) scale(1);
+    transition: 350ms ease-in-out;
+    background-color:  #6EB9E3;
+
 }
 .menu:hover .box1{
     
@@ -72,13 +96,12 @@ nav{
 
 
 .section1{
-
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-  
+   
 }
 img{
     width: 30px;
@@ -96,22 +119,22 @@ img{
     min-height: 200px;
     width: 300px;
     height: 300px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     background: url('assetes/wave.svg'); 
     background-repeat: repeat-x;
     /* background-position: 10px; */
     animation: anim 10s linear infinite;
-
+    /* color: #6EB9E3; */
     z-index: 10000;
     /* overflow: hidden; */
-    /* clip-path: circle(50% at 50% 50%); */
-  
+    clip-path: circle(50% at 50% 50%);
+    
       
 }
 .wave{
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+    border: 5px solid #6EB9E3;
     border-radius: 50%;
     text-align: center;
     margin: 0 auto;
@@ -124,6 +147,14 @@ img{
  
 }
 
+.btns{
+    margin: 2em;
+    /* border: 2px solid black ; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .name{
     font-size: 1.5em;
 }
