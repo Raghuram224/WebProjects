@@ -6,6 +6,10 @@
     transition: 350ms ease-in-out;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+:root{
+    --blue: #6EB9E3;
+}
 html,body{
     width: 100%;
     height: 100%;
@@ -20,7 +24,7 @@ html,body{
   
 }
 .navbar>h3{
-    color: #6EB9E3;
+    color: var(--blue);
     font-size: 20px;
     font-weight: 900;
 }
@@ -44,7 +48,7 @@ html,body{
     color: white;
 }
 .desc{
-    text-align: end;
+    text-align: justify;
     padding: 0.5em;
     font-size: 1.3em;
     margin: auto;
@@ -69,7 +73,7 @@ html,body{
     border-radius: 20px;
     width: 90%;
     height:5px;
-    background-color: #6EB9E3;
+    background-color: var(--blue);
     transition: 350ms ease-in-out;
     
     
@@ -77,7 +81,7 @@ html,body{
 .menu:hover ~ .settings{
     transform: translateX(0) translateY(0) scale(1);
     transition: 350ms ease-in-out;
-    background-color:  #6EB9E3;
+    background-color:  var(--blue);
 
 }
 .menu:hover .box1{
@@ -134,7 +138,7 @@ img{
 .wave{
     height: 100%;
     width: 100%;
-    border: 5px solid #6EB9E3;
+    border: 5px solid var(--blue);
     border-radius: 50%;
     text-align: center;
     margin: 0 auto;
@@ -166,6 +170,16 @@ button{
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+.settings > form>*{
+    /* margin: 0.5em; */
+    padding: 0.5em;
+    /* border: 1px solid black; */
+}
+.moonbtn{
+    width: 100%;
+    /* border: 1px solid black; */
 }
 
 @keyframes anim {

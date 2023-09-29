@@ -1,4 +1,5 @@
-const countdownTimeInSeconds = 6;
+let countdownTimeInSeconds = updateTimer*10 ;
+console.log(countdownTimeInSeconds);
 let remainingTime = countdownTimeInSeconds;
 let timer;
 let startCount=0;
@@ -34,7 +35,9 @@ function darkMode(){
 function updateTimer(){
     let range=_('time-input');
     let displayRange=_('time-range');
+    
     displayRange.textContent=range.value;
+    return parseInt(displayRange.value);
 }
 function updateBreak(){
     let range=_('break-input');
@@ -78,6 +81,7 @@ function startTimer(){
 }
 
 function start(){
+   console.log("range"+_('time-range').value);
     if(startCount%2==0){
         
         remainingTime = countdownTimeInSeconds;
@@ -85,6 +89,7 @@ function start(){
         
         console.log(startCount)
     }
+  
     startCount++;
     if(!timerStatus){
       timer=setInterval(startTimer,1000);
