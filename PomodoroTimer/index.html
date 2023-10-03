@@ -9,7 +9,7 @@
 <body>
     <div class="navbar">
         <h3>Pomodoro Timer</h3>
-        <div class="menu">
+        <div class="menu" tabindex="0">
             <div class="bar box1"></div>
             <div class="bar box2"></div>
             <div class="bar box3"></div>
@@ -23,8 +23,8 @@
                 <input type="range" value="range-input" id="time-input" min="5" max="60" step="5" value="5" oninput="updateTimer()">
                 <label for="range-input">Set Time</label>
                 <p>Time: <span id="time-range">0</span></p>
-                <input type="range" value="range-input" id="break-input" min="1" max="10" step="1" value="1" oninput="updateBreak()">
-                <label for="range-input">Set Break</label>
+                <input type="range" value="range-input" id="break-input" min="5" max="30" step="5"  oninput="updateBreak()">
+                <label for="range-input">Break Time</label>
                 <p>Break: <span id="break-range">0</span></p>
                 
                 <button type="button" class="moonbtn" onclick="darkMode()"><img src="assetes/moon.svg"> </button>
@@ -39,7 +39,7 @@
             <div class="wrapper">
                 <div class="timer">
                     <div class="wave">                        
-                            <p class="name">Work</p>
+                            <p class="name" id="status">Work</p>
                             <div class="result">
                                 <span class="time" id="time">00:00</span>
                                 <p class="msg" id="msg"></p>
@@ -59,7 +59,7 @@
         
     
     </div>
-   
+    <div id="display">0</div>
 
 
     <script src="script.js"></script>

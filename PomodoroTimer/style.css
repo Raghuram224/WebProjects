@@ -40,10 +40,11 @@ html,body{
     margin: auto;
     margin-top: -10%;
     transform:  translateX(-100%) translateY(-100%) scale(0);
+    
     border-radius: 20px;
     margin-left: 3em;
     position: absolute;
-    backdrop-filter: blur(80px);
+    /* backdrop-filter: blur(80px); */
     z-index: 1000000;
     color: white;
 }
@@ -78,10 +79,10 @@ html,body{
     
     
 }
-.menu:hover ~ .settings{
+.menu:focus ~ .settings{
     transform: translateX(0) translateY(0) scale(1);
     transition: 350ms ease-in-out;
-    background-color:  var(--blue);
+    background-color:  var(--blue)
 
 }
 .menu:hover .box1{
@@ -138,12 +139,12 @@ img{
 .wave{
     height: 100%;
     width: 100%;
-    border: 5px solid var(--blue);
+    border: 5px solid #6EB9E3;
     border-radius: 50%;
     text-align: center;
     margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-position: bottom;
@@ -164,6 +165,9 @@ img{
 }
 .result{
     font-size: 2.5em;
+    margin-top: 0.5em;
+    /* border: 1px solid black; */
+    
 }
 
 button{
