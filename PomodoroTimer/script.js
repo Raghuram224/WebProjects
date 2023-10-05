@@ -9,7 +9,7 @@ let timer;
 let timerStatus = false;
 let dark_mode=0;
 let timeControl=0;
-let menuCount=0;
+let menuCount=1;
 let audio = new Audio('assetes/song.mp3');
 const  TIME=_('time');
 const MESSAGE=_('msg');
