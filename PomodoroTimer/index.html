@@ -16,16 +16,19 @@
         </div>
     
         <div class="settings">
+            <h2>Pomodoro</h2>
             <p class="desc">The Pomodoro Technique is a time management method based on 25-minute stretches of focused work broken by five-minute breaks. Longer breaks, typically 15 to 30 minutes, are taken after four consecutive work intervals. Each work interval is called a pomodoro, the Italian word for tomato (plural: pomodori).</p>
         
-            <form>
-                
-                <input type="range" value="range-input" id="time-input" min="5" max="60" step="5" value="5" oninput="updateTimer()">
+            <form>                
+                <input type="range"  id="time-input" min="5" max="60" step="5"  value="30" oninput="updateTimer()">
                 <label for="range-input">Set Time</label>
-                <p>Time: <span id="time-range">0</span></p>
-                <input type="range" value="range-input" id="break-input" min="5" max="30" step="5"  oninput="updateBreak()">
+                <p>Time: <span id="time-range">30</span></p>
+                <input type="range" id="break-input" min="5" max="30" step="5" value="5"  oninput="updateBreak()">
                 <label for="range-input">Break Time</label>
-                <p>Break: <span id="break-range">0</span></p>
+                <p>Break: <span id="break-range">5</span></p>
+                <input type="range" id="long-break-input" min="10" max="30" step="5" value="10"  oninput="updateLongBreak()">
+                <label for="range-input"></label>
+                <p>Long Break Time: <span id="long-break-range">10</span></p>
                 
                 <button type="button" class="moonbtn" onclick="darkMode()"><img src="assetes/moon.svg"> </button>
             </form>
@@ -39,9 +42,9 @@
             <div class="wrapper">
                 <div class="timer">
                     <div class="wave">                        
-                            <p class="name" id="status">Work</p>
+                            <p class="name time" id="status">Work</p>
                             <div class="result">
-                                <span class="time" id="time">00:00</span>
+                                <span class="time" id="time"></span>
                                 <p class="msg" id="msg"></p>
                            
                         </div>         
@@ -59,7 +62,7 @@
         
     
     </div>
-    <div id="display">0</div>
+ 
 
 
     <script src="script.js"></script>

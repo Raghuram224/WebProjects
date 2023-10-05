@@ -9,6 +9,7 @@
 
 :root{
     --blue: #6EB9E3;
+
 }
 html,body{
     width: 100%;
@@ -34,11 +35,12 @@ html,body{
     justify-content: space-evenly;
     align-items: center;
     /* border: 1px solid black; */
-    width: 80%;
+    width: 90%;
     font-weight: 400;
     padding: 0.5em;
+    padding-top: 1em;
     margin: auto;
-    margin-top: -10%;
+    /* margin-top: -10%; */
     transform:  translateX(-100%) translateY(-100%) scale(0);
     
     border-radius: 20px;
@@ -49,12 +51,18 @@ html,body{
     color: white;
 }
 .desc{
-    text-align: justify;
+    text-align: center;
     padding: 0.5em;
     font-size: 1.3em;
     margin: auto;
+    font-weight: 500;
+    word-spacing: 0.2em;
  
     /* visibility: hidden; */
+}
+form{
+    font-size: 1.2em;
+    font-weight: 500;
 }
 .menu{
     min-width: 35px;
@@ -82,7 +90,8 @@ html,body{
 .menu:focus ~ .settings{
     transform: translateX(0) translateY(0) scale(1);
     transition: 350ms ease-in-out;
-    background-color:  var(--blue)
+    background-color:  var(--blue);
+    margin-left: 1.5em;
 
 }
 .menu:hover .box1{
@@ -136,6 +145,10 @@ img{
     
       
 }
+.time{
+    color: #6EB9E3;
+    font-weight: 500;
+}
 .wave{
     height: 100%;
     width: 100%;
@@ -149,6 +162,7 @@ img{
     flex-direction: column;
     background-position: bottom;
     
+    
  
 }
 
@@ -161,6 +175,7 @@ img{
     align-items: center;
 }
 .name{
+    font-weight: 900;
     font-size: 1.5em;
 }
 .result{

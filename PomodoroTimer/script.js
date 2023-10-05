@@ -1,7 +1,7 @@
 
 
-// let countdownTimeInSeconds =parseInt(updateTimer().value)*60;
-let countdownTimeInSeconds =1*60;
+
+let countdownTimeInSeconds =30*60;
 
 let breakCount=0;
 let remainingTime = countdownTimeInSeconds;
@@ -9,20 +9,18 @@ let timer;
 let timerStatus = false;
 let dark_mode=0;
 let timeControl=0;
-
+let audio = new Audio('assetes/song.mp3');
 const  TIME=_('time');
 const MESSAGE=_('msg');
 const STATUS=_('status');
 
+TIME.textContent="30:00";
 function _(id){
     return document.getElementById(id);
 }
 
-function breakTimer(){
-    // let breakTime= updateBreak();
-    let breakTime=1*60;
-    
-    remainingTime=breakTime;
+function breakTimer(){    
+
     start();
 
 }
@@ -53,7 +51,21 @@ function updateTimer(){
     
     countdownTimeInSeconds = parseInt(range.value) * 60;
     remainingTime = countdownTimeInSeconds;
-   
+
+    let minutes=Math.floor(remainingTime/60);    
+    let seconds=remainingTime%60;
+
+    if(minutes<=9){
+        minutes="0"+minutes;
+       
+    }
+    if(seconds<=9){
+        seconds="0"+seconds;
+    
+    }
+    TIME.textContent=`${minutes}:${seconds}`;
+
+    return remainingTime;
 }
 function updateBreak(){
     let range=_('break-input');
@@ -61,22 +73,48 @@ function updateBreak(){
 
     displayRange.textContent=range.value+"min";
     
-    let result= Math.ceil(parseInt(range.value)/parseInt(range.value));
-   
-    return result;
+    countdownTimeInSeconds = parseInt(range.value) * 60;
+    remainingTime = countdownTimeInSeconds;
+  
+    return remainingTime;
 
     
 }
+function updateLongBreak(){
+    let range=_('long-break-input');
+    let displayRange=_('long-break-range');
+
+    displayRange.textContent=range.value+"min";
+    
+    countdownTimeInSeconds = parseInt(range.value) * 60;
+    remainingTime = countdownTimeInSeconds;
+  
+    return remainingTime;
+}
 function reset(){
-    TIME.textContent=remainingTime;
+    let time=updateTimer();
+    let minutes=Math.floor(time/60);
+    
+    let seconds=time%60;
+    if(minutes<=9){
+        minutes="0"+minutes;
+       
+    }
+    if(seconds<=9){
+        seconds="0"+seconds;
+    
+    }
+    
+    TIME.textContent=`${minutes}:${seconds}`;
     pause();
     remainingTime=countdownTimeInSeconds;
     timerStatus=false;
+    STATUS.textContent="Work";
     
 }
 
 function pause(){
-    console.log("pause");
+
     clearInterval(timer);
     timerStatus=false;
     
@@ -85,60 +123,72 @@ function startTimer(){
     let minutes=Math.floor(remainingTime/60);
     
     let seconds=remainingTime%60;
-   
+    if(minutes<=9){
+        minutes="0"+minutes;
+       
+    }
+    if(seconds<=9){
+        seconds="0"+seconds;
     
-    // console.log(`0${minutes}:${seconds}`);
+    }
+
     if(remainingTime===0){
-        
+       
         MESSAGE.textContent= "Time's Up";
-        TIME.textContent=remainingTime;
+        TIME.textContent=`${remainingTime}:00`;
         clearInterval(startTimer);     
          
         breakCount++;
         timeControl++;
-        console.log("breakCount"+breakCount);
+   
 
             if(breakCount>7){
                 remainingTime=0;
                 pause();
                 reset();
+                audio.pause();
             }
         
-            _("display").textContent=breakCount;
+           
             if(breakCount==7){
-               remainingTime=3*60;
+               remainingTime=updateLongBreak();
                setTimeout(breakTimer);
                MESSAGE.textContent=" ";
                 STATUS.textContent = "Long Break!!";
+                audio.play();
 
             }
             else if(timeControl%2==0){
-                setTimeout(start);
-                remainingTime=countdownTimeInSeconds;
+                countdownTimeInSeconds=updateTimer()*60;
                 MESSAGE.textContent=" ";
                 STATUS.textContent = "Work";
+                start();
+                
+                audio.pause();
                 
             }  
             else {
+                remainingTime=updateBreak();
                 setTimeout(breakTimer);
                 MESSAGE.textContent=" ";
                 STATUS.textContent = "Break";
+               
+                audio.play();
             }            
              
-        // }
         
     }else{        
-        TIME.textContent=`0${minutes}:${seconds}`;
-        // console.log(remainingTime);
+        TIME.textContent=`${minutes}:${seconds}`;  
         remainingTime-=1;
     }
+ 
 
 }
 
 function start(){
     
     if(!timerStatus){
-      timer=setInterval(startTimer,1000);
+      timer=setInterval(startTimer,100);
     timerStatus = true;
     }
     // TIME.textContent=timeStarts;
