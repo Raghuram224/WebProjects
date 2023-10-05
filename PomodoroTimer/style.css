@@ -214,3 +214,16 @@ button{
         background-position: 0px 200px;
     }
 }
+
+@media screen and (min-width:481px) {
+    .settings{
+      width: 60%;
+    }
+    
+}
+@media screen and (min-width:822px) {
+    .settings{
+      width: 40%;
+    }
+    
+}
