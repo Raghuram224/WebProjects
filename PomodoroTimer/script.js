@@ -52,7 +52,8 @@ function updateTimer(){
     countdownTimeInSeconds = parseInt(range.value) * 60;
     remainingTime = countdownTimeInSeconds;
 
-    let minutes=Math.floor(remainingTime/60);    
+    let minutes=Math.floor(remainingTime/60);
+    
     let seconds=remainingTime%60;
 
     if(minutes<=9){
@@ -188,8 +189,8 @@ function startTimer(){
 function start(){
     
     if(!timerStatus){
-      timer=setInterval(startTimer,100);
+      timer=setInterval(startTimer,1000);
     timerStatus = true;
     }
-    // TIME.textContent=timeStarts;
+    
 }
