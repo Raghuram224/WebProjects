@@ -9,10 +9,12 @@ let timer;
 let timerStatus = false;
 let dark_mode=0;
 let timeControl=0;
+let menuCount=0;
 let audio = new Audio('assetes/song.mp3');
 const  TIME=_('time');
 const MESSAGE=_('msg');
 const STATUS=_('status');
+const SETTINGS=_('settings');
 
 TIME.textContent="30:00";
 function _(id){
@@ -193,4 +195,20 @@ function start(){
     timerStatus = true;
     }
     
+}
+
+function menu(){
+    if(menuCount%2!=0){
+        SETTINGS.style.transform=" translateX(0) translateY(0) scale(1)";
+        SETTINGS.style.transition="350ms ease-in-out";
+        SETTINGS.style.backgroundColor="#6EB9E3"
+        SETTINGS.style.marginLeft="1.5em";
+        menuCount++;
+
+    }
+    else{
+        SETTINGS.style.transform=" translateX(-100%) translateY(-100%) scale(0)";
+        menuCount++;
+    }
+    console.log(menuCount);
 }

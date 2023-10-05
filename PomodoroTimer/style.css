@@ -26,7 +26,7 @@ html,body{
 }
 .navbar>h3{
     color: var(--blue);
-    font-size: 20px;
+    font-size: 1.7em;
     font-weight: 900;
 }
 .settings{
@@ -87,13 +87,13 @@ form{
     
     
 }
-.menu:focus ~ .settings{
+/* .menu:focus ~ .settings{
     transform: translateX(0) translateY(0) scale(1);
     transition: 350ms ease-in-out;
     background-color:  var(--blue);
     margin-left: 1.5em;
 
-}
+} */
 .menu:hover .box1{
     
     transform: translatey(6.5px) rotate(45deg);
