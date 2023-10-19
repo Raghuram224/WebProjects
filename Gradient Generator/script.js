@@ -13,9 +13,9 @@ function randomColor(){
   
   
 
-function preLoadedData(){
+function preLoadedData(n){
 	let preBoxes="";
-	for(let i=0;i<20;i++){
+	for(let i=0;i<n;i++){
 		preBoxes+=`
 		<div class="box"> 
             <div class="wrapper">  
@@ -41,7 +41,7 @@ function preLoadedData(){
 	return preBoxes;
 
 }
-let data=preLoadedData()
+let data=preLoadedData(20);
 
 SECTION.innerHTML= data;
 
@@ -54,8 +54,23 @@ for(let i=0;i<wrapper.length;i++){
 	wrapper[i].style.backgroundImage = `linear-gradient(to right, ${color1} ,${color2}`;
 }
 
-  
-    
-function likes(){
+function infinteScroll(ev){
+	const BOTTOMSCROLL=document.body.getBoundingClientRect().bottom;
+	const WINDOWHEIGHT=this.innerHeight;
+	
+	if(BOTTOMSCROLL-WINDOWHEIGHT<0){
+
+		SECTION.innerHTML+=preLoadedData(8);
+		
+
+	}
+	wrapper = document.getElementsByClassName('wrapper');
+		for(let i=0;i<wrapper.length;i++){
+			let color1=randomColor();
+			let color2=randomColor();
+			wrapper[i].style.backgroundImage = `linear-gradient(to right, ${color1} ,${color2}`;
+		}
 
 }
+
+window.addEventListener("scroll",infinteScroll);
