@@ -1,5 +1,14 @@
 
 const SECTION=document.getElementById("section");
+let wrapper = document.getElementsByClassName('wrapper');
+let n=20;
+let color1;
+let color2;
+let gradient1;
+let gradient2;
+let boxCount=4;
+let colors = [];
+let idCount=1;
 
 function randomColor(){
     let letters = "0123456789ABCDEF";
@@ -7,22 +16,21 @@ function randomColor(){
     for(let i=0; i<6;i++){
         color+=letters[Math.floor(Math.random()*16)];
     }
-    return color;
-  
+    return color;  
   }
   
-  
+
 
 function preLoadedData(n){
 	let preBoxes="";
 	for(let i=0;i<n;i++){
 		preBoxes+=`
-		<div class="box"> 
-            <div class="wrapper">  
-                <div class="gradient1 gradient">
+		<div class="box" id="likes"> 
+            <div class="wrapper" id=b${idCount}>  
+                <div class="gradient1 gradient" id="gradient1">
                     <p class="color"></p>
                 </div>                
-                <div class="gradient2 gradient"></div>          
+                <div class="gradient2 gradient"  id="gradient2"></div>          
             </div>
             
             <div class="emoji">
@@ -37,40 +45,93 @@ function preLoadedData(n){
             </div>    
     
         </div>`;
+        idCount++;
 	}
+    // console.log(colors);
 	return preBoxes;
 
 }
-let data=preLoadedData(20);
-
-SECTION.innerHTML= data;
 
 
-  
-let wrapper = document.getElementsByClassName('wrapper');
-for(let i=0;i<wrapper.length;i++){
-	let color1=randomColor();
-	let color2=randomColor();
-	wrapper[i].style.backgroundImage = `linear-gradient(to right, ${color1} ,${color2}`;
+
+
+function init(n){
+    let data=preLoadedData(n);
+    SECTION.innerHTML= data;
+    for(let i=0;i<wrapper.length;i++){
+        let color1=randomColor();
+        let color2=randomColor();
+        colors.push({color1,color2});
+        wrapper[i].style.backgroundImage = `linear-gradient(to right, ${color1} ,${color2}`;
+    }
 }
+init(n);
+  
+
 
 function infinteScroll(ev){
-	const BOTTOMSCROLL=document.body.getBoundingClientRect().bottom;
-	const WINDOWHEIGHT=this.innerHeight;
+	const BOTTOMSCROLL=SECTION.getBoundingClientRect().bottom;
+	const WINDOWHEIGHT=window.innerHeight;
+    // console.log(BOTTOMSCROLL,WINDOWHEIGHT);
+    
 	
-	if(BOTTOMSCROLL-WINDOWHEIGHT<0){
+	if(BOTTOMSCROLL-WINDOWHEIGHT<100){
 
-		SECTION.innerHTML+=preLoadedData(8);
-		
+		SECTION.innerHTML+=preLoadedData(boxCount);event.target
+        // wrapper = document.getElementsByCl//n=n+boxCount;assName('wrapper');
+        gradient1=document.getElementById("gradient1");
+        gradient2=document.getElementById("gradient2");
+      
 
-	}
-	wrapper = document.getElementsByClassName('wrapper');
-		for(let i=0;i<wrapper.length;i++){
-			let color1=randomColor();
-			let color2=randomColor();
+    
+		for(let i=n;i<wrapper.length;i++){
+            
+			color1=randomColor();
+			color2=randomColor();
+            colors.push({color1,color2});
 			wrapper[i].style.backgroundImage = `linear-gradient(to right, ${color1} ,${color2}`;
+            
+            
+            
 		}
+        n=n+boxCount;  
+	}
+    
+
+	
 
 }
 
 window.addEventListener("scroll",infinteScroll);
+window.addEventListener("mouseover",function(event){
+    // console.log(event.target.id);
+    let bgChanger=event.target.id;
+    
+    let colorIndx = event.target.parentElement.id.slice(1);
+    // console.log(event.target.parentElement.id);
+    // console.log(bgChanger,colorIndx)
+    if(bgChanger == 'gradient2'){
+        event.target.style.backgroundColor = colors[colorIndx-1].color2;
+    }else{
+        event.target.style.backgroundColor = colors[colorIndx-1].color1;
+    }
+    
+    
+
+});
+
+window.addEventListener("mouseout",function(event){
+        event.target.style.backgroundColor = "transparent";
+        event.target.style.backgroundColor = "transparent";
+    
+});
+
+// SECTION.addEventListener("click",function(ev){
+//     console.log(ev.target.classList);
+//     if(ev.target.classList.contains('gradient2')){
+//         console.log(ev.target);
+//         // ev.target.style.backgroundColor = ;
+//     }
+// })
+// let like= document.getElementById("likes");
+// like.addEventListener("click",likes);

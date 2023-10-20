@@ -1,9 +1,15 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
     transition: 350ms ease-in-out;
+    font-family: 'Comfortaa', sans-serif;
+    text-align: center;
 }
 
 :root{
@@ -28,11 +34,14 @@ html,body{
     justify-content: space-evenly;
     align-items: center;
     box-shadow:var(--box-shadow) ;
-    width:  90%;    
+    width:  95%;    
     margin: 1em auto;
     border-radius: 10px;
-    /* position: fixed; */
-    /* border: 2px solid black; */
+    position: fixed;
+    left: 5%;
+    top: 0;
+    background-color: #F5F7FA;
+  
 }
 .navbar img{
     will-change: 20%;
@@ -52,34 +61,31 @@ ul{
 }
 ul li{
    box-shadow: var(--box-shadow);
-   padding: 1em;
+   padding: 0.5em;
    border-radius: 10px;
-   margin: 0.5em;  
+   margin: 0.5em; 
+   font-size: 1.1em; 
    
 }
 .section{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
+    justify-content: space-around;  
     width: 90%;
-    margin: auto;
+    margin: 6em auto;
 }
 
 .box{
     background-color: var(--box);
-    margin: 2em auto;
-    
-    width: 80%;
-    /* height: 20%; */
+    margin: 2em auto;    
+    width: 80%;  
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    /* border: 2px solid black; */
-    /* object-fit: contain; */
+    
   
 }
 
@@ -90,20 +96,23 @@ ul li{
 } */
 .gradient{
     flex-basis: 50%;
-    height: 100%;
-    /* height: 40px; */
-    /* border: 1px solid black; */
+    height: 100%;    
     border-radius: 10px;
+    /* background-color: white; */
+    /* visibility: hidden; */
+    /* border: 2px  solid black; */
+    /* display: none; */
 }
 .gradient1:hover,.gradient2:hover{
-
-    /* flex-grow: 1; */
     flex-basis:100%;
+    /* visibility:  visible; */
+    /* display: block; */
+    
 
 }
 .gradient1:hover .gradient2{
     flex-basis: 10%;
-    /* overflow: ; */
+    
 }
 
 .gradient2:hover .gradient1{
@@ -113,16 +122,11 @@ ul li{
 .wrapper{
     height:200px;
     width : 90%;
-
-    margin-top: 1em;
-    /* margin-bottom: 3em; */
+    margin-top: 1em; 
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
    
-
-
-    /* background-image: linear-gradient(to right, red , yellow); */
     
   }
 .emoji{
@@ -155,13 +159,11 @@ ul li{
     font-size: 2em;
     color: var(--font-color);
 }
-/* .grBGColor{
-    background-color: transparent;
-} */
+
 
 @media screen and (min-width:481px) {
     .section{
-        /* border: 2px solid black; */
+        margin: 7em auto;
         justify-content: space-around;
     }
     .section>*{
@@ -172,13 +174,22 @@ ul li{
     .box{
         width: 40%;
     }
+    .navbar{
+        width: 90%;
+        left: 5%;
+        
+    }
+    ul li{
+        font-size: 1.3em; 
+    }
 }
 @media screen and (min-width:822px) {
     .navbar{
         width: 50%;
+        left: 25%;
     }
     .section{
-        /* border: 2px solid black; */
+        margin: 8em auto;
         justify-content: space-evenly;
     }
     .section>*{
