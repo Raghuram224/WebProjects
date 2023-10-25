@@ -11,6 +11,7 @@ let colors = [];
 let idCount=1;
 let textColor1;
 let textColor2;
+let favriouteArray=[];
 
 let c1;
 let c2;
@@ -77,7 +78,7 @@ function init(n){
         wrapper[i].style.backgroundImage = `linear-gradient(to right, ${color1} ,${color2}`;
     }
 }
-init(n);
+
   
 
 
@@ -112,85 +113,99 @@ function infinteScroll(){
 	
 
 }
-
-
-window.addEventListener("mouseover",function(event){
+function mouseEnters(event){
   
    
     let bgChanger=event.target.id;    
-    let colorIndx = event.target.parentElement.id.slice(1);
-    
-    
-    
+    let colorIndx = event.target.parentElement.id.slice(1);  
+    console.log(event.target.parentElement);
+    c2=event.target.parentElement.querySelector("#color2");
+    c1=event.target.parentElement.querySelector("#color1");
+    console.log(c1,c2)
 
     if(bgChanger === 'gradient1'){
         let opacityController=event.target.style.opacity="1";
 
-        c2=event.target.querySelector("#color2");
+        
         if(c2!==null){
-            c2.style.opacity="0";
+            // c2.style.opacity="0";
         }
         
         event.target.style.backgroundColor = colors[colorIndx-1].color1;
-        event.target.querySelector("#color1").textContent=`${colors[colorIndx-1].color1}`;
+        event.target.parentElement.querySelector("#color1").textContent=`${colors[colorIndx-1].color1}`;
         
 
     }else if((bgChanger === 'gradient2')) {
         let opacityController=event.target.style.opacity="1";
         
-        c1=event.target.querySelector("#color1");
+        
         if(c1!==null){
-            c1.style.opacity="0";
+            // c1.style.opacity="0";
         }
         
         event.target.style.backgroundColor = colors[colorIndx-1].color2;
-        event.target.querySelector("#color2").textContent=`${colors[colorIndx-1].color2}`;
+        event.target.parentElement.querySelector("#color2").textContent=`${colors[colorIndx-1].color2}`;
 
+        // c1=event.target.parentElement.querySelector("#color1");
+        // c2=event.target.parentElement.querySelector("#color2");    
+
+        // c1.textContent=" ";
+        // c2.textContent=" ";
      
         
     }else{
         
-    }
-    
+    }   
+}
     
     
 
-});
 
-window.addEventListener("mouseout",function(event){
+function mouseLeaves(event){
         event.target.style.backgroundColor = "transparent";
         event.target.style.backgroundColor = "transparent";
 
-        c1=event.target.querySelector("#color1");
-        c2=event.target.querySelector("#color2");    
-
+        c1=event.target.parentElement.querySelector("#color1");
+        c2=event.target.parentElement.querySelector("#color2");    
+        console.log(c1,c2);
+        c1.textContent=" ";
+        c2.textContent=" ";
+        
         // c2.style.opacity="0";
         // c1.style.opacity="0";
  // console.log(colors);
     
-});
+}
 
-window.addEventListener("click",function(event){
-    // console.log(event.target.parentElement.nodeName);
+function favrioute(favriouteBox){
+    favriouteArray.push(favriouteBox);
+
+}
+
+function likes (event){  
+ 
     if(event.target.style.fill=="rgb(255, 49, 65)"){
         event.target.style.fill="#FFF";
+        
     }else{
         event.target.style.fill="#FF3141";
-    }
-    
-    // console.log(event.target.style.fill);
-    
-
-});
-
-
-function monoColor(){
-    let gradient2=document.getElementsByClassName("gradient2");
-    console.log(gradient2);
-    gradient2[0].classList.add("monoColorGradient2");
-
+        favrioute(event.target.closest(".box"));
+    }   
 
 }
 
 
+
+// function monoColor(){
+//     let gradient2=document.getElementsByClassName("gradient2");
+//     console.log(gradient2);
+//     gradient2[0].classList.add("monoColorGradient2");
+
+
+// }
+
+init(n);
 window.addEventListener("scroll",infinteScroll);
+window.addEventListener("mouseout",mouseLeaves);
+window.addEventListener("mouseover",mouseEnters);
+window.addEventListener("click",likes);
