@@ -14,7 +14,8 @@ let textColor1;
 let textColor2;
 let favriouteArray=[];
 let allGradients;
-
+let pages=true;
+let scroll=true;
 
 let c1;
 let c2;
@@ -36,7 +37,7 @@ function preLoadedData(n){
 	let preBoxes="";
 	for(let i=0;i<n;i++){
 		preBoxes+=`
-		<div class="box" id="likes"> 
+		<div class="box"> 
             <div class="wrapper" id=b${idCount}>  
 
                 <div class="gradient1 gradient" id="gradient1">
@@ -91,7 +92,7 @@ function infinteScroll(){
    
     
 	
-	if(BOTTOMSCROLL-WINDOWHEIGHT<100){
+	if(BOTTOMSCROLL-WINDOWHEIGHT<100 && scroll==true){
 
 		SECTION.innerHTML+=preLoadedData(boxCount);
      
@@ -129,9 +130,9 @@ function mouseEnters(event){
         let opacityController=event.target.style.opacity="1";
 
         
-        if(c2!==null){
-            // c2.style.opacity="0";
-        }
+        // if(c2!==null){
+        //     // c2.style.opacity="0";
+        // }
         
         event.target.style.backgroundColor = colors[colorIndx-1].color1;
         event.target.parentElement.querySelector("#color1").textContent=`${colors[colorIndx-1].color1}`;
@@ -141,9 +142,9 @@ function mouseEnters(event){
         let opacityController=event.target.style.opacity="1";
         
         
-        if(c1!==null){
-            // c1.style.opacity="0";
-        }
+        // if(c1!==null){
+        //     // c1.style.opacity="0";
+        // }
         
         event.target.style.backgroundColor = colors[colorIndx-1].color2;
         event.target.parentElement.querySelector("#color2").textContent=`${colors[colorIndx-1].color2}`;
@@ -190,26 +191,36 @@ function likes (event){
     if(event.target.style.fill=="rgb(255, 49, 65)"){
         event.target.style.fill="#FFF";
         let removeFavrioute=event.target.closest(".box");
-        console.log(favriouteArray);
-        console.log(removeFavrioute);
 
-        if(favriouteArray.includes(removeFavrioute)){
-            console.log("contains");
+        if(removeFavrioute!=null){
+            removeFavrioute=removeFavrioute.outerHTML.toString();
+            console.log("Rem"+removeFavrioute);
+            if(favriouteArray.includes(removeFavrioute)){
+                console.log(favriouteArray.indexOf(removeFavrioute));
+
+            }else{
+                console.log("not includes");
+            }
         }
+        
+        
+
+        
         
     }else{
         event.target.style.fill="#FF3141";
         let favBox=event.target.closest(".box");
-      
+
         if(favBox!=null){
-            favBox=favBox.outerHTML;
-            console.log(typeof favBox);
-            if(!favriouteArray.includes(`${favBox}`)){
-                favriouteArray.push(`${favBox}`);
+            favBox=favBox.outerHTML.toString();
+            
+            if(favriouteArray.includes(favBox)!=true){
+                favriouteArray.push(favBox);
             }
             
            
         }
+        
       
        
         // console.log(event.target.closest(".box"));
@@ -218,20 +229,24 @@ function likes (event){
 }
 
 function favriouteBoxes(event){
-    if(event.target.id=="favrioutes"){
+    if(event.target.id=="favrioutes" && pages==true){
         if(favriouteArray.length!=0){
             allGradients=SECTION.innerHTML;
             let favString="";
             for(let i=0;i<favriouteArray.length;i++){
-                console.log(typeof favriouteArray[i]);
+                console.log( i+ favriouteArray[i]);
                 favString+= favriouteArray[i];
             }
           
             
-            SECTION.innerHTML=favString;    
+            SECTION.innerHTML=favString;  
+            pages=false; 
+            scroll=false; 
         }
     }else if(event.target.id=="gradients" && allGradients.length!=0){
         SECTION.innerHTML=allGradients;
+        pages=true;
+        scroll=true;
     }
     
    
