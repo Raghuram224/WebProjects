@@ -13,10 +13,10 @@ let idCount=1;
 let textColor1;
 let textColor2;
 let favriouteArray=[];
+let favriouteIdArray=[];
 let allGradients;
 let pages=true;
 let scroll=true;
-
 let c1;
 let c2;
 
@@ -33,11 +33,24 @@ function randomColor(){
   
 
 
+
+
+  function randomColor(){
+    let letters = "0123456789ABCDEF";
+    let color="#";
+    for(let i=0; i<6;i++){
+        color+=letters[Math.floor(Math.random()*16)];
+    }
+    return color;  
+  }
+  
+
+
 function preLoadedData(n){
 	let preBoxes="";
 	for(let i=0;i<n;i++){
 		preBoxes+=`
-		<div class="box"> 
+		<div class="box" id="box${i}"> 
             <div class="wrapper" id=b${idCount}>  
 
                 <div class="gradient1 gradient" id="gradient1">
@@ -193,29 +206,33 @@ function likes (event){
         let removeFavrioute=event.target.closest(".box");
 
         if(removeFavrioute!=null){
-            removeFavrioute=removeFavrioute.outerHTML.toString();
-            console.log("Rem"+removeFavrioute);
-            if(favriouteArray.includes(removeFavrioute)){
-                console.log(favriouteArray.indexOf(removeFavrioute));
-
-            }else{
-                console.log("not includes");
+            // removeFavrioute=removeFavrioute.outerHTML.toString();
+            // console.log("Rem"+removeFavrioute);
+            if(favriouteIdArray.includes(removeFavrioute.id)){
+                let idx =favriouteIdArray.indexOf(removeFavrioute.id);
+                favriouteIdArray.splice(idx,1);
+                favriouteArray.splice(idx,1);
+             
             }
         }
-        
-        
+    
 
         
         
     }else{
         event.target.style.fill="#FF3141";
         let favBox=event.target.closest(".box");
-
+        // console.log(favBox);
         if(favBox!=null){
-            favBox=favBox.outerHTML.toString();
             
-            if(favriouteArray.includes(favBox)!=true){
+            console.log(favBox.id);
+            if(!favriouteIdArray.includes(favBox.id)){
+                favriouteIdArray.push(favBox.id);
+                favBox=favBox.outerHTML;
                 favriouteArray.push(favBox);
+                
+            }else{
+
             }
             
            
@@ -234,7 +251,7 @@ function favriouteBoxes(event){
             allGradients=SECTION.innerHTML;
             let favString="";
             for(let i=0;i<favriouteArray.length;i++){
-                console.log( i+ favriouteArray[i]);
+                // console.log( i+ favriouteArray[i]);
                 favString+= favriouteArray[i];
             }
           
