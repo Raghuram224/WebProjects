@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     /* color: white; */
+      transition: 350ms ease-in-out;
 }
 html,body{
     width: 100%;
@@ -40,9 +41,7 @@ img{
 .taskName,.f-color{
     color: white;
 }
-.option-visible{
-    height: 300px;
-}
+
 body{
     display: flex;
     flex-direction: column;
@@ -109,8 +108,26 @@ body{
     border: 1px solid white;
     width: 80%;
     height: 0;
+    scale: 0;
     overflow: hidden;
+    transition: 350ms ease-in-out;
+}
+.option-visible{
+    /* height: 100px; */
+    height: auto;
+    
+    scale: 1;
 }
 .options>*{
     padding: 0.2em;
+}
+
+.Low{
+    color: blue;
+}
+.Medium{
+    color: yellow;
+}
+.High{
+    color: red;
 }

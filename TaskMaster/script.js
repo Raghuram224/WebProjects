@@ -2,21 +2,21 @@ const TASKLISTBOX = document.querySelector(".taskList");
 const TASK = document.querySelector(".task");
 const ADDBUTTON = document.querySelector(".addButton");
 const INPUTBAR = document.querySelector(".inputBar");
-// const SECTION = document.querySelector(".section1");
+
 let isDoneChecker=0;
 let taskId;
 let template=`<div class="task" id="task#id#">
 
                 <div class="status" id="s#id#">
                     <input type="checkbox" class="isdone" id="t#id#">
-                    <p class="taskName" id="para#id#">#content#</p>
+                    <p class="taskName #color#" id="para#id#">#content#</p>
                     <span class="editButton" id="editButton" ><img id="editButton" src="assets/edit.svg" alt=""></span>
                 </div>               
                 
                 <div class="options">               
-                    <span  ><img src="assets/delete.svg" alt="" id="d#id#" class="deleteButton"></span>              
+                    <span><img src="assets/delete.svg" alt="" id="d#id#" class="deleteButton"></span>              
                     <p class="f-color"id="p#id#">Priority :</p>
-                    <select name="choice" id="c#id#">
+                    <select name="choice" id="c#id#" class="choice" >
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>;
@@ -30,12 +30,12 @@ let template=`<div class="task" id="task#id#">
 const TASKLISTARRAY = [
   { taskContent: "Go to gym ",
     isCompleted: false,
-    priority: "low",
+    priority: "Low",
     taskId: 1 },
   {
     taskContent: "Go to home ",
     isCompleted: false,
-    priority: "medium",
+    priority: "Medium",
     taskId: 2,
   },
 ];
@@ -78,29 +78,37 @@ function render(){
     TASKLISTARRAY.forEach(function(task){
         let complete = task.isCompleted ? 'taskName done' : "taskName";
         if(task.isCompleted){
+            let str="";
             htmlString += template.replace(/#id#/g,task.taskId)
-            .replace(`"t${task.taskId}"`, `"t${task.taskId}" checked`)
-           .replace("#content#",task.taskContent)
-           .replace("taskName",complete);
-           console.log("true");
+            .replace(`"t${task.taskId}"`, `"t${task.taskId}" checked`)            
+            .replace("#content#",task.taskContent)
+            .replace("#color#", `${task.priority}`);
+            // .replace("#color#","low")
+            
+            // console.log("true");
+
         }
         else{
             htmlString += template.replace(/#id#/g,task.taskId)
-           .replace("#content#",task.taskContent)
-           .replace("taskName",complete);
+            .replace("#content#",task.taskContent)
+            .replace("#color#", `${task.priority}`);
         }
 
-        //    document.getElementsByClassName(".taskName")[indx].classList.add(complete)
+
+        
     });
     
     TASKLISTBOX.innerHTML = htmlString;
 
 }
 
+// function idFinder(event){
+
+// }
 
 document.body.addEventListener("click",function(event){
 
-    console.log(event.target);
+
     if (event.target.id == "addButton") {
         taskId = TASKLISTARRAY.length==0 ? 1:TASKLISTARRAY[TASKLISTARRAY.length-1].taskId+1;
         let newTask = addingTaskDatabase(taskId, INPUTBAR.value);
@@ -112,13 +120,12 @@ document.body.addEventListener("click",function(event){
         event.target.closest(".task").querySelector(".options").classList.toggle("option-visible");
 
     } else if (event.target.classList.contains("isdone")) {      
-        // console.log(event.target.nextElementSibling);  
+   
         event.target.nextElementSibling.classList.toggle("done");
 
         let getId = parseInt((event.target.id).substring(1,event.target.id.length));
 
-        // console.log("t"+getId);
-        // document.getElementById(`t${getId}`).nextElementSibling.classList.toggle("done");
+        
 
         TASKLISTARRAY.forEach(function(task){
             if(task.taskId==getId){
@@ -138,9 +145,28 @@ document.body.addEventListener("click",function(event){
         objectFinder(getId);
         render()
         
+    }else if(event.target.classList.contains("choice")){
+        if(event.target.value=="Low"){
+            let getId = parseInt(event.target.id.replace("c", ""));
+            
+            // objectFinder(getId);
+            render()
+
+        }else if(event.target.value=="Medium"){
+
+        }else if(event.target.value=="High"){
+
+        }
     }
 
 });
+
+function renderColor(){
+    let l = document.querySelector(".taskList").children;
+    l.forEach(function (task){
+
+    });
+}
 
 
 render();
