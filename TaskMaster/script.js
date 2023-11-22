@@ -2,7 +2,7 @@ const TASKLISTBOX = document.querySelector(".taskList");
 const TASK = document.querySelector(".task");
 const ADDBUTTON = document.querySelector(".addButton");
 const INPUTBAR = document.querySelector(".inputBar");
-const SECTION = document.querySelector(".section1");
+// const SECTION = document.querySelector(".section1");
 let isDoneChecker=0;
 let taskId;
 let template=`<div class="task" id="task#id#">
@@ -15,7 +15,7 @@ let template=`<div class="task" id="task#id#">
                 
                 <div class="options">               
                     <span  ><img src="assets/delete.svg" alt="" id="d#id#" class="deleteButton"></span>              
-                    <p id="p#id#">Priority :</p>
+                    <p class="f-color"id="p#id#">Priority :</p>
                     <select name="choice" id="c#id#">
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
@@ -99,7 +99,8 @@ function render(){
 
 
 document.body.addEventListener("click",function(event){
-    console.log(event.target.id);
+
+    console.log(event.target);
     if (event.target.id == "addButton") {
         taskId = TASKLISTARRAY.length==0 ? 1:TASKLISTARRAY[TASKLISTARRAY.length-1].taskId+1;
         let newTask = addingTaskDatabase(taskId, INPUTBAR.value);
