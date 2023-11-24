@@ -26,15 +26,23 @@ let template=`<div class="task" id="task#id#">
                 </div>
                 
             </div>`;
+//Array of objects
+// const TASKLISTARRAY = [
+//   { taskContent: "Do js assignments",
+//     isCompleted: false,
+//     priority: "low",
+//     taskId: 1 },
 
-const TASKLISTARRAY = [
-  { taskContent: "Do js assignments",
-    isCompleted: false,
-    priority: "low",
-    taskId: 1 },
+// ];
+//Local storage getter and setter
+function localStorageGetter(){
+    return JSON.parse(localStorage.getItem("key"))
+}
+function localStorageSetter(){
+    localStorage.setItem("key",JSON.stringify(TASKLISTARRAY));
+}
 
-];
-
+// object creator based on the, task will be created
 function objectCreator(taskId,taskContent,isCompleted,priority){
     return {
       taskContent: taskContent,
@@ -51,12 +59,14 @@ function isCompletedTask(taskId){
 
 }
 
-
+// adding task object to array 
 function addingTaskDatabase(taskId,taskContent){
     return taskContent!="" ? TASKLISTARRAY.push(objectCreator(taskId,taskContent,false,"low")) : 'hello';
 
 
 }
+
+// find which task will be clicked
 function objectFinder(taskID){
     for(let i=0;i<TASKLISTARRAY.length;i++){
         if(TASKLISTARRAY[i].taskId==taskID){
@@ -67,9 +77,10 @@ function objectFinder(taskID){
 }
 
 
-
+// this function call when there is a operation happened
 function render(){   
     let htmlString = "";
+    if(TASKLISTARRAY.length == 0 ){return};
     TASKLISTARRAY.forEach(function(task){
         let complete = task.isCompleted ? 'taskName done' : "taskName";
         if(task.isCompleted){
@@ -78,9 +89,7 @@ function render(){
             .replace(`"t${task.taskId}"`, `"t${task.taskId}" checked`)            
             .replace("#content#",task.taskContent)
             .replace("#color#", `${task.priority}`);
-            // .replace("#color#","low")
             
-            // console.log("true");
 
         }
         else{
@@ -97,6 +106,7 @@ function render(){
 
 }
 
+// this will listen for any click event happening
 document.body.addEventListener("click",function(event){
 
 
@@ -105,6 +115,7 @@ document.body.addEventListener("click",function(event){
         let newTask = addingTaskDatabase(taskId, INPUTBAR.value);
 
         INPUTBAR.value = "";
+        localStorageSetter();
         render();
 
     } else if (event.target.id == "editButton") {
@@ -127,14 +138,16 @@ document.body.addEventListener("click",function(event){
                     task.isCompleted=true;
                 }
             }
-        })       
+        });
+        localStorageSetter();
         
 
     }else if(event.target.classList.contains("deleteButton")){
     
         let getId = parseInt(event.target.id.replace("d", ""));
         objectFinder(getId);
-        render()
+        render();
+        localStorageSetter();
         
     }else if(event.target.classList.contains("choice")){
         // console.log(TASKLISTARRAY);
@@ -165,17 +178,13 @@ document.body.addEventListener("click",function(event){
             }
 
         }
+        localStorageSetter();
         render();
+
     }
 
 });
 
-function renderColor(){
-    let l = document.querySelector(".taskList").children;
-    l.forEach(function (task){
-
-    });
-}
-
-
+//get all tasks from the storage
+const TASKLISTARRAY = localStorageGetter() || [];
 render();
