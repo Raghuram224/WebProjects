@@ -26,14 +26,7 @@ let template=`<div class="task" id="task#id#">
                 </div>
                 
             </div>`;
-//Array of objects
-// const TASKLISTARRAY = [
-//   { taskContent: "Do js assignments",
-//     isCompleted: false,
-//     priority: "low",
-//     taskId: 1 },
 
-// ];
 //Local storage getter and setter
 function localStorageGetter(){
     return JSON.parse(localStorage.getItem("key"))
