@@ -1,8 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    /* color: white; */
-      transition: 350ms ease-in-out;
+    transition: 350ms ease-in-out;
 }
 html,body{
     width: 100%;
@@ -11,8 +10,7 @@ html,body{
   
 }
 :root{
-    --main-color:orange;
-    /* --main-color:pink; */
+    --main-color:orange;    
     --bg-color:#1E1F1F;
 }
 img{
@@ -47,15 +45,13 @@ img{
 
 body{
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
+    flex-direction: column;   
     align-items: center;
 }
 .nav-bar{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    /* border: 1px solid white; */
+    align-items: center;    
     width: 40%;
 }
 .nav-bar>*{
@@ -63,18 +59,16 @@ body{
 }
 .inputBar{
     height: 50px;
-    width: 60%;
+    width: 80%;
     font-size: 1.3em;
-    padding: 0.2em;
-    /* width: ; */
+    padding: 0.2em;    
     border-color: var(--main-color);
     background-color: transparent;
     color: white;
+    box-shadow: 4px 4px var(--main-color);
 }
-.taskList{
-    /* border: 1px solid white; */
-    width: 35%;
-    /* border: 1px solid white; */
+.taskList{    
+    width: 35%;   
     margin: 1em;
 }
 .task{
@@ -83,8 +77,10 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     border: 1px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 10px;
 }
 .task>*{
     margin: 0.5em;
@@ -94,7 +90,7 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    /* border: 1px solid white; */
+    
 }
 .status>*{
     font-size: 1.4em;
@@ -111,43 +107,29 @@ body{
 .options{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    /* border: 1px solid white; */
+    align-items: center;    
     width: 80%;
     height: 0;
     scale: 0;
     overflow: hidden;
     transition: 350ms ease-in-out;
 }
-.option-visible{
-    /* height: 100px; */
-    height: auto;
-    
+.option-visible{    
+    height: auto;    
     scale: 1;
 }
 .options>*{
     padding: 0.2em;
 }
 
-.Low,.low{
-    /* color:white; */
+.Low,.low{   
     border-bottom: 2px solid white;
 }
 .Medium,.medium{
-    /* color: yellow;
-     */
-      border-bottom: 2px solid var(--main-color);
+    
+    border-bottom: 2px solid var(--main-color);
 }
 .High,.high{
      border-bottom: 2px solid red;
 }
 
-/* .low{ */
-    /* color: blue;
-}
-.medium{
-    color: yellow;
-}
-.high{
-    color: red;
-} */
