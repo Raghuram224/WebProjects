@@ -15,7 +15,7 @@ let template=`<div class="task" id="task#id#">
                 
                 <div class="options">               
                     <span><img src="assets/delete.svg" alt="" id="d#id#" class="deleteButton"></span>              
-                    <p class="f-color"id="p#id#">Priority :</p>
+                    <p class="f-color"id="p#id#">Priority</p>
                     <select name="choice" id="c#id#" class="choice" >
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
