@@ -28,16 +28,11 @@ let template=`<div class="task" id="task#id#">
             </div>`;
 
 const TASKLISTARRAY = [
-  { taskContent: "Go to gym ",
+  { taskContent: "Do js assignments",
     isCompleted: false,
     priority: "low",
     taskId: 1 },
-  {
-    taskContent: "Go to home ",
-    isCompleted: false,
-    priority: "medium",
-    taskId: 2,
-  },
+
 ];
 
 function objectCreator(taskId,taskContent,isCompleted,priority){
