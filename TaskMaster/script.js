@@ -146,17 +146,35 @@ document.body.addEventListener("click",function(event){
         render()
         
     }else if(event.target.classList.contains("choice")){
+        // console.log(TASKLISTARRAY);
         if(event.target.value=="Low"){
             let getId = parseInt(event.target.id.replace("c", ""));
+            for(let i=0 ;i<TASKLISTARRAY.length;i++){
+                if(TASKLISTARRAY[i].taskId == getId){
+                    TASKLISTARRAY[i].priority=event.target.value;
+                }
+            }
             
-            // objectFinder(getId);
-            render()
+        
 
         }else if(event.target.value=="Medium"){
+            let getId = parseInt(event.target.id.replace("c", ""));
+            for(let i=0 ;i<TASKLISTARRAY.length;i++){
+                if(TASKLISTARRAY[i].taskId == getId){
+                    TASKLISTARRAY[i].priority=event.target.value;
+                }
+            }
 
         }else if(event.target.value=="High"){
+            let getId = parseInt(event.target.id.replace("c", ""));
+            for(let i=0 ;i<TASKLISTARRAY.length;i++){
+                if(TASKLISTARRAY[i].taskId == getId){
+                    TASKLISTARRAY[i].priority=event.target.value;
+                }
+            }
 
         }
+        render();
     }
 
 });
