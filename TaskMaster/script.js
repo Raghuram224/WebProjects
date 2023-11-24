@@ -30,12 +30,12 @@ let template=`<div class="task" id="task#id#">
 const TASKLISTARRAY = [
   { taskContent: "Go to gym ",
     isCompleted: false,
-    priority: "Low",
+    priority: "low",
     taskId: 1 },
   {
     taskContent: "Go to home ",
     isCompleted: false,
-    priority: "Medium",
+    priority: "medium",
     taskId: 2,
   },
 ];
@@ -102,10 +102,6 @@ function render(){
 
 }
 
-// function idFinder(event){
-
-// }
-
 document.body.addEventListener("click",function(event){
 
 
@@ -147,7 +143,7 @@ document.body.addEventListener("click",function(event){
         
     }else if(event.target.classList.contains("choice")){
         // console.log(TASKLISTARRAY);
-        if(event.target.value=="Low"){
+        if(event.target.value=="Low"||event.target.value=="low"){
             let getId = parseInt(event.target.id.replace("c", ""));
             for(let i=0 ;i<TASKLISTARRAY.length;i++){
                 if(TASKLISTARRAY[i].taskId == getId){
@@ -157,7 +153,7 @@ document.body.addEventListener("click",function(event){
             
         
 
-        }else if(event.target.value=="Medium"){
+        }else if(event.target.value=="Medium" ||event.target.value=="medium"){
             let getId = parseInt(event.target.id.replace("c", ""));
             for(let i=0 ;i<TASKLISTARRAY.length;i++){
                 if(TASKLISTARRAY[i].taskId == getId){
@@ -165,7 +161,7 @@ document.body.addEventListener("click",function(event){
                 }
             }
 
-        }else if(event.target.value=="High"){
+        }else if(event.target.value=="High"||event.target.value=="high"){
             let getId = parseInt(event.target.id.replace("c", ""));
             for(let i=0 ;i<TASKLISTARRAY.length;i++){
                 if(TASKLISTARRAY[i].taskId == getId){

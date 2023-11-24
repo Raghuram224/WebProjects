@@ -12,11 +12,13 @@ html,body{
 }
 :root{
     --main-color:orange;
+    /* --main-color:pink; */
     --bg-color:#1E1F1F;
 }
 img{
     width: 35px;
 }
+
 .head-color{
     color: var(--main-color);
     font-size: 2.5em;
@@ -64,10 +66,14 @@ body{
     font-size: 1.3em;
     padding: 0.2em;
     /* width: ; */
+    border-color: var(--main-color);
+    background-color: transparent;
+    color: white;
 }
 .taskList{
     /* border: 1px solid white; */
-    width: 35%;border: 1px solid white;
+    width: 35%;
+    /* border: 1px solid white; */
     margin: 1em;
 }
 .task{
@@ -77,7 +83,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 90%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 .task>*{
     margin: 0.5em;
@@ -87,7 +93,7 @@ body{
     align-items: center;
     justify-content: space-evenly;
     width: 80%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 .status>*{
     font-size: 1.4em;
@@ -105,7 +111,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 80%;
     height: 0;
     scale: 0;
@@ -122,22 +128,25 @@ body{
     padding: 0.2em;
 }
 
-.Low{
-    color: blue;
+.Low,.low{
+    /* color:white; */
+    border-bottom: 2px solid white;
 }
-.Medium{
-    color: yellow;
+.Medium,.medium{
+    /* color: yellow;
+     */
+      border-bottom: 2px solid var(--main-color);
 }
-.High{
-    color: red;
+.High,.high{
+     border-bottom: 2px solid red;
 }
 
-.low{
-    color: blue;
+/* .low{ */
+    /* color: blue;
 }
 .medium{
     color: yellow;
 }
 .high{
     color: red;
-}
+} */
