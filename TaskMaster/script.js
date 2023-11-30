@@ -9,7 +9,7 @@ let template=`<div class="task" id="task#id#">
 
                 <div class="status" id="s#id#">
                     <input type="checkbox" class="isdone" id="t#id#">
-                    <p class="taskName #color#" id="para#id#">#content#</p>
+                    <p class="#taskName# #color# " id="para#id#">#content#</p>
                     <span class="editButton" id="editButton" ><img id="editButton" src="assets/edit.svg" alt=""></span>
                 </div>               
                 
@@ -81,7 +81,8 @@ function render(){
             htmlString += template.replace(/#id#/g,task.taskId)
             .replace(`"t${task.taskId}"`, `"t${task.taskId}" checked`)            
             .replace("#content#",task.taskContent)
-            .replace("#color#", `${task.priority}`);
+            .replace("#color#", `${task.priority}`)
+            .replace("#taskName#",complete);
             
 
         }
